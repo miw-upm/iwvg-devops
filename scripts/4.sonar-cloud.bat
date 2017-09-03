@@ -15,6 +15,7 @@ echo .
 cd %workspace%
 echo ============ mvn sonar:sonar ... =======================================================
 echo .
+call mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install
 call mvn sonar:sonar -Dsonar.organization=miw-upm-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2c0fb8373ef9b9e73ffad70e23f1a77158fb0e37 --settings settings.xml
 pause
 
