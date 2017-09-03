@@ -5,15 +5,22 @@
 			<PatternLayout
 				pattern="[%-5level] %d{dd/MMM HH:mm:ss} %-30.30c{2} --> %msg%n" />
 		</Console>
-		<File name="File" fileName="target/logs/logs.txt">
-			<PatternLayout
-				pattern="[%-5level] %d{dd-MMM HH:mm:ss} %-30.30c{2} --> %msg%n" />
-		</File>
+        <RollingFile name="RollingFile" fileName="target/logs/iwvg.log"
+            filePattern="target/logs/iwvg-%d{yyyy-MM-dd.HH}-%i.log">
+            <PatternLayout>
+                <pattern>[%-5level] %d{dd-MMM HH:mm:ss} %-30.30c{2} --> %msg%n
+                </pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="1 MB" />
+            </Policies>
+        </RollingFile>
 	</appenders>
 	<loggers>
 		<root level="${logs.level.root}">
 			<AppenderRef ref="Console" />
-			<appenderRef ref="File" />
+			<appenderRef ref="RollingFile" />
 		</root>
 	</loggers>
 </configuration> 
