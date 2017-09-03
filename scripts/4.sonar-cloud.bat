@@ -13,7 +13,7 @@ echo JAVA_HOME --- %JAVA_HOME%
 echo M2_HOME   --- %M2_HOME%
 echo .
 cd %workspace%
-echo ============ mvn clean test (profile: develop) =======================================================
+echo ============ mvn sonar:sonar ... =======================================================
 echo .
 call mvn sonar:sonar -Dsonar.organization=miw-upm-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=2c0fb8373ef9b9e73ffad70e23f1a77158fb0e37 --settings settings.xml
 pause
