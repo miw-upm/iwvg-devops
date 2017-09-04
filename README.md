@@ -2,7 +2,7 @@
 #### Asignatura: *Ingeniería Web: Visión General*
 #### [Máster en Ingeniería Web por la U.P.M.](http://miw.etsisi.upm.es)
 
-### Status code
+### Estado del código
 
 [![Build Status](https://travis-ci.org/miw-upm/IWVG.Forge.svg?branch=develop)](https://travis-ci.org/miw-upm/IWVG.Forge)
 
