@@ -20,7 +20,7 @@ public class Point {
     }
 
     public double module() {
-        return Math.sqrt((double)this.x * this.x * this.y * this.y);
+        return Math.sqrt((double)this.x * this.x + this.y * this.y);
     }
 
     public double phase() {
