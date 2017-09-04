@@ -15,9 +15,9 @@ before_install:
 - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
 - mvn test --settings settings.xml
-- if errorLevel 1 goto error
+- if [ $? -gt 0 ] ; then
+-  echo .
+-  echo "=====================>>>>>>>>>>>>>  ERRORES..."
+- else
 #Test unitario y de integracion en develop
 - mvn verify --settings settings.xml
-- exit
-- :error
-- echo .....=====......
