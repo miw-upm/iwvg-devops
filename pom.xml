@@ -30,11 +30,10 @@
 		<log4j.version>2.3</log4j.version>
 		<!-- Data Base -->
 		<database.driver>com.mysql.jdbc.Driver</database.driver>
-		<database.url>jdbc:mysql://localhost:3306/eco</database.url>
+		<database.url>jdbc:mysql://localhost:3306/forge</database.url>
 	</properties>
 
 	<profiles>
-		<!-- Maven will apply this by default as we set in $HOME/.m2/settings.xml -->
 		<!-- Default: -Denvironment.type=develop -->
 		<profile>
 			<id>develop</id>

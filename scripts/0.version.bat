@@ -8,7 +8,7 @@ set M2_HOME=C:\Archivos_de_programa\apache-maven-3.3.3
 set PATH=%PATH%;%JAVA_HOME%\bin;%M2_HOME%\bin
 ::echo saca por pantalla un mensaje
 echo -----------------------------------------
-echo . (C) MIW
+echo . (C) MIW - UPM
 echo -----------------------------------------
 echo .
 echo Workspace --- %workspace%
