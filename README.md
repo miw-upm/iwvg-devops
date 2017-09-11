@@ -5,7 +5,7 @@
 
 ### Estado del código
 
-[![Build Status](https://travis-ci.org/miw-upm/IWVG.Forge.svg?branch=develop)](https://travis-ci.org/miw-upm/IWVG.Forge)
+[![Build Status](https://travis-ci.org/miw-upm/IWVG-forge.svg?branch=develop)](https://travis-ci.org/miw-upm/IWVG-forge)
 
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=es.upm.miw:IWVG.Forge)](https://sonarcloud.io/dashboard/index/es.upm.miw:IWVG.Forge)
 
