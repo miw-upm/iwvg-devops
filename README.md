@@ -7,7 +7,7 @@
 
 [![Build Status](https://travis-ci.org/miw-upm/IWVG-forge.svg?branch=develop)](https://travis-ci.org/miw-upm/IWVG-forge)
 
-[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=miw-upm-iwvg-forge)](https://sonarcloud.io/dashboard/index/es.upm.miw:IWVG-forge)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=es.upm.miw:IWVG-forge)](https://sonarcloud.io/dashboard/index/es.upm.miw:IWVG-forge)
 
 [![codebeat badge](https://codebeat.co/badges/72a87b0f-0ada-4895-9fcb-1d10a392bdaf)](https://codebeat.co/projects/github-com-miw-upm-iwvg-forge-develop)
 
