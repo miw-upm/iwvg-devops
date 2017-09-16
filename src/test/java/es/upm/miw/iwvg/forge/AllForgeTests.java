@@ -14,7 +14,8 @@ import es.upm.miw.iwvg.forge.test.AllForgeTestTests;
     AllForgeJunitTests.class,
     AllForgeLogTests.class,
     AllForgeTestTests.class,
-    AllForgeTestIntegrationTests.class})
+    AllForgeTestIntegrationTests.class
+})
 public class AllForgeTests {
 
 }
