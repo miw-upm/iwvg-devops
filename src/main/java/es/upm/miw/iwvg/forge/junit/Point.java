@@ -2,7 +2,9 @@ package es.upm.miw.iwvg.forge.junit;
 
 public class Point {
 
-    private int x, y;
+    private int x;
+
+    private int y;
 
     public Point(int x, int y) {
         this.x = x;
@@ -18,7 +20,7 @@ public class Point {
     }
 
     public double module() {
-        return Math.sqrt(this.x * this.x + this.y * this.y);
+        return Math.sqrt((double)this.x * this.x + this.y * this.y);
     }
 
     public double phase() {

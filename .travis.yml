@@ -14,5 +14,6 @@ services:
 before_install:
 - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
-#Test unitario y de integracion en develop
 - mvn verify --settings settings.xml
+- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify --settings settings.xml
+- mvn sonar:sonar -Dsonar.organization=miw-upm-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR --settings settings.xml

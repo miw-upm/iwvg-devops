@@ -37,7 +37,7 @@ public class DecimalCollectionTest {
 
 	@Test
 	public void testSum() {
-		assertEquals(6, this.decimalCollection.sum(), 10e-5);
+		assertEquals(6.0, this.decimalCollection.sum(), 10e-5);
 	}
 
 	@Test
@@ -48,7 +48,7 @@ public class DecimalCollectionTest {
 
 	@Test
 	public void testHigher() {
-		assertEquals(3, this.decimalCollection.higher(), 10e-5);
+		assertEquals(3.0, this.decimalCollection.higher(), 10e-5);
 	}
 
 	@Test

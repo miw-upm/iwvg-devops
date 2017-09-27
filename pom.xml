@@ -5,7 +5,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>IWVG.Forge</artifactId>
+	<artifactId>IWVG-forge</artifactId>
 	<groupId>es.upm.miw</groupId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -21,7 +21,7 @@
 		<project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
 		<jdk.version>1.8</jdk.version>
 		<!-- Maven -->
-		<maven.compiler.version>3.3</maven.compiler.version>
+		<maven.compiler.version>3.5</maven.compiler.version>
 		<!-- Maven. Test de Integración -->
 		<maven.failsafe.version>2.19.1</maven.failsafe.version>
 		<!-- Pruebas -->
@@ -30,11 +30,10 @@
 		<log4j.version>2.3</log4j.version>
 		<!-- Data Base -->
 		<database.driver>com.mysql.jdbc.Driver</database.driver>
-		<database.url>jdbc:mysql://localhost:3306/eco</database.url>
+		<database.url>jdbc:mysql://localhost:3306/forge</database.url>
 	</properties>
 
 	<profiles>
-		<!-- Maven will apply this by default as we set in $HOME/.m2/settings.xml -->
 		<!-- Default: -Denvironment.type=develop -->
 		<profile>
 			<id>develop</id>

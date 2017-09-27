@@ -8,7 +8,7 @@ public class NaturalDao {
         this.natural = natural;
     }
 
-    public Natural findOne(Integer id) {
+    public Natural findOne() {
         // Se recupera de la BD
         return natural;
     }
