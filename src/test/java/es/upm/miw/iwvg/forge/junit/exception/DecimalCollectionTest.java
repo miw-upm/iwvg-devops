@@ -3,17 +3,12 @@ package es.upm.miw.iwvg.forge.junit.exception;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import es.upm.miw.iwvg.forge.junit.exception.DecimalCollection;
 
 public class DecimalCollectionTest {
     private DecimalCollection decimalCollection;
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
 
     @Before
     public void before() {
