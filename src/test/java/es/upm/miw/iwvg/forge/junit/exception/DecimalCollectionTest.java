@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.forge.junit.exception; 
+package es.upm.miw.iwvg.forge.junit.exception;
 
 import static org.junit.Assert.assertEquals;
 
