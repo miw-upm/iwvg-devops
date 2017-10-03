@@ -3,17 +3,12 @@ package es.upm.miw.iwvg.forge.junit.exception;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import es.upm.miw.iwvg.forge.junit.exception.DecimalCollection;
 
 public class DecimalCollectionTest {
     private DecimalCollection decimalCollection;
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
 
     @Before
     public void before() {
@@ -50,9 +45,8 @@ public class DecimalCollectionTest {
         assertEquals(3.0, this.decimalCollection.higher(), 10e-5);
     }
 
-    @Test
+    @Test(expected = ArithmeticException.class )
     public void testHigherArithmeticExceptionIfEmpty() {
-        exception.expect(ArithmeticException.class);
         new DecimalCollection().higher();
     }
 
