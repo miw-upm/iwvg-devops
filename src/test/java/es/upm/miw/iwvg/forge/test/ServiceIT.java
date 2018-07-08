@@ -1,14 +1,12 @@
 package es.upm.miw.iwvg.forge.test;
 
-import static org.junit.Assert.assertNotNull;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import es.upm.miw.iwvg.forge.test.Service;
-
-public class ServiceIT {
+class ServiceIT {
 
     @Test
-    public void test() {
+    void test() {
         Service service = new Service();
         assertNotNull(service.getValue());
     }

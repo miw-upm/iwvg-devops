@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 public class LoggerDemo {
 
     public void logs() {
-        Logger logger = LogManager.getLogger(this.getClass().getName());
+        Logger logger = LogManager.getLogger(this.getClass());
         logger.fatal("Log de fatal");
         logger.error("Log de error");
         logger.warn("Log de warning");

@@ -1,17 +1,16 @@
-package es.upm.miw.iwvg.forge.junit.exception; 
+package es.upm.miw.iwvg.forge.junit.exception;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import es.upm.miw.iwvg.forge.junit.exception.DecimalCollection;
-
-public class DecimalCollectionTest {
+class DecimalCollectionTest {
     private DecimalCollection decimalCollection;
 
-    @Before
-    public void before() {
+    @BeforeEach
+    void before() {
         this.decimalCollection = new DecimalCollection();
         this.decimalCollection.add(2.0);
         this.decimalCollection.add(-1.0);
@@ -20,34 +19,34 @@ public class DecimalCollectionTest {
     }
 
     @Test
-    public void testDecimalCollection() {
+    void testDecimalCollection() {
         this.decimalCollection = new DecimalCollection();
         assertEquals(0, this.decimalCollection.size());
     }
 
     @Test
-    public void testAdd() {
+    void testAdd() {
         assertEquals(4, this.decimalCollection.size());
     }
 
     @Test
-    public void testSum() {
+    void testSum() {
         assertEquals(6.0, this.decimalCollection.sum(), 10e-5);
     }
 
-    @Test(expected = ArithmeticException.class)
-    public void testSumArithmeticExceptionIfEmpty() {
-        new DecimalCollection().sum();
+    @Test
+    void testSumArithmeticExceptionIfEmpty() {
+        assertThrows(ArithmeticException.class, () -> new DecimalCollection().sum());
     }
 
     @Test
-    public void testHigher() {
+    void testHigher() {
         assertEquals(3.0, this.decimalCollection.higher(), 10e-5);
     }
 
-    @Test(expected = ArithmeticException.class )
-    public void testHigherArithmeticExceptionIfEmpty() {
-        new DecimalCollection().higher();
+    @Test
+    void testHigherArithmeticExceptionIfEmpty() {
+        assertThrows(ArithmeticException.class, () -> new DecimalCollection().higher());
     }
 
 }

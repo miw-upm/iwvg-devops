@@ -1,27 +1,26 @@
 package es.upm.miw.iwvg.forge.test;
 
-import static org.junit.Assert.assertEquals;
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import es.upm.miw.iwvg.forge.test.Natural;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class NaturalTest {
+class NaturalTest {
 
     private Natural myClass;
 
-    @Before
-    public void before() {
+    @BeforeEach
+    void before() {
         myClass = new Natural(5);
     }
 
     @Test
-    public void testNatural() {
+    void testNatural() {
         assertEquals(5, myClass.getValue());
     }
 
     @Test
-    public void testDuplex() {
+    void testDuplex() {
         assertEquals(10, myClass.duplex());
     }
 

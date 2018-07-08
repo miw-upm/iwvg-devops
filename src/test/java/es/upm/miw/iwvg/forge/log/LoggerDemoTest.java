@@ -1,11 +1,12 @@
 package es.upm.miw.iwvg.forge.log;
 
-import org.junit.Test;
 
-public class LoggerDemoTest {
+import org.junit.jupiter.api.Test;
+
+class LoggerDemoTest {
 
     @Test
-    public void testLogs() {
+    void testLogs() {
         new LoggerDemo().logs();
     }
 
