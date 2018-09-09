@@ -15,5 +15,5 @@ before_install:
 - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
 - mvn verify
-- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify --settings settings.xml
-- mvn sonar:sonar -Dsonar.organization=miw-upm-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR --settings settings.xml
+- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
+- mvn sonar:sonar -Dsonar.organization=miw-upm-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR
