@@ -24,11 +24,15 @@ public class DecimalCollection {
         if (this.collection.isEmpty()) {
             throw new ArithmeticException("Empty collection");
         }
+        /*
         double sum = 0;
         for (double item : this.collection) {
             sum += item;
         }
         return sum;
+        */
+
+        return this.collection.stream().mapToDouble(value -> value).sum();
     }
 
     public double higher() {

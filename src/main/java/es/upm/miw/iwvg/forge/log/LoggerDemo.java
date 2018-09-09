@@ -15,4 +15,8 @@ public class LoggerDemo {
         logger.trace("Log de trace");
     }
 
+    public static void main(String[] args) {
+        new LoggerDemo().logs();
+    }
+
 }

@@ -14,37 +14,37 @@ class PointTest {
     }
 
     @Test
-    void testPuntoIntInt() {
+    void testPointIntInt() {
         assertEquals(2, pt.getX());
         assertEquals(3, pt.getY());
     }
     
     @Test
-    void testPuntoInt() {
+    void testPointInt() {
         pt = new Point(2);
         assertEquals(2, pt.getX());
         assertEquals(2, pt.getY());
     }
 
     @Test
-    void testPunto() {
+    void testPoint() {
         pt = new Point();
         assertEquals(0, pt.getX());
         assertEquals(0, pt.getY());
     }
 
     @Test
-    void testModulo() {
+    void testModule() {
         assertEquals(3.6055, pt.module(), 10e-5);
     }
 
     @Test
-    void testFase() {
+    void testPhase() {
         assertEquals(0.9828, pt.phase(), 10e-5);
     }
 
     @Test
-    void testTranslate() {
+    void testTranslateOrigin() {
         this.pt.translateOrigin(new Point(1, 1));
         assertEquals(1, pt.getX());
         assertEquals(2, pt.getY());
