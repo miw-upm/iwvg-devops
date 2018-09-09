@@ -5,7 +5,7 @@
 ### Tecnologías necesarias
 * Java
 * Maven
-* Eclipse
+* IntelliJ
 * GitHub
 
 ### Descripción
