@@ -31,8 +31,9 @@ public class DecimalCollection {
         }
         return sum;
         */
+        // return this.collection.stream().mapToDouble(value -> value).sum();
+        return this.collection.stream().mapToDouble(Double::doubleValue).sum();
 
-        return this.collection.stream().mapToDouble(value -> value).sum();
     }
 
     public double higher() {
