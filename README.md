@@ -9,6 +9,8 @@
 
 [![Quality Gate](https://sonarcloud.io/api/badges/gate?key=es.upm.miw:IWVG-forge)](https://sonarcloud.io/dashboard/index/es.upm.miw:IWVG-forge)
 
+https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3AIWVG-forge&metric=alert_status
+
 
 ### Tecnologías necesarias
 * Java
