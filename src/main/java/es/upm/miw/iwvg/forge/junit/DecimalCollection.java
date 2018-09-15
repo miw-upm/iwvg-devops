@@ -25,6 +25,7 @@ public class DecimalCollection {
             throw new ArithmeticException("Empty collection");
         }
         /*
+        Version java 1.7
         double sum = 0;
         for (double item : this.collection) {
             sum += item;
