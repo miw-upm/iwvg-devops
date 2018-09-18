@@ -97,17 +97,4 @@
 		</plugins>
 	</build>
 
-	<developers>
-		<developer>
-			<name>Jesus Bernal</name>
-			<id>J.Bernal</id>
-			<email>j.bernal@upm.es</email>
-			<organization>MIW UPM</organization>
-			<roles>
-				<role>Architect</role>
-				<role>Developer</role>
-			</roles>
-		</developer>
-	</developers>
-
 </project>
