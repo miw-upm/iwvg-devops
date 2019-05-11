@@ -16,4 +16,8 @@ public class C1 {
     public String m4() {
         return "C1:m4";
     }
+
+    public String m5() {
+        return "C1:m5";
+    }
 }
