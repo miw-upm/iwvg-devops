@@ -12,4 +12,8 @@ public class C1 {
     public String m3() {
         return "C1:m3";
     }
+
+    public String m4() {
+        return "C1:m4 of issue#20";
+    }
 }
