@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.forge.junit;
+package es.upm.miw.iwvg.ecosystem.junit;
 
 import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.BeforeEach;
