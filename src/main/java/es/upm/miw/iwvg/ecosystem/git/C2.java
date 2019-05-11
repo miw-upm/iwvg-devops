@@ -13,7 +13,6 @@ public class C2 {
         return "C2:m3";
     }
 
-
     public String m4() {
         return "C2:m4";
     }
