@@ -5,7 +5,7 @@
 
 ### Estado del código
 
-[![Build Status](https://travis-ci.org/miw-upm/IWVG-forge.svg?branch=develop)](https://travis-ci.org/miw-upm/IWVG-forge)
+[![Build Status](https://travis-ci.org/miw-upm/iwvg-ecosystem.svg?branch=develop)](https://travis-ci.org/miw-upm/iwvg-ecosystem)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-forge&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-forge)
 [![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-ecosystem?branch=master)](https://bettercodehub.com/results/miw-upm/iwvg-ecosystem)
 
