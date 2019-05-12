@@ -10,17 +10,15 @@ notifications:
   email:
     recipients:
     - j.bernal@upm.es
-
-services:
-- mysql
-- mongodb
-before_install:
-- mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
-
+# services:
+# - mysql
+# - mongodb
+# before_install:
+# - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
-#Test unitario y de integracion en perfil DEV, con cobertura
+#Test unitario y de integracion con cobertura
 - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
 
-#SONAR
+#SONARCLOUD
 - mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github -Dsonar.login=$SONAR
 
