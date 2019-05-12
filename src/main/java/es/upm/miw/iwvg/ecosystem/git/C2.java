@@ -32,4 +32,8 @@ public class C2 {
     public String m8() {
         return "C2:m8";
     }
+
+    public String m9() {
+        return "C2:m9";
+    }
 }
