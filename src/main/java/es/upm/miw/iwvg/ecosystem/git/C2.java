@@ -16,4 +16,8 @@ public class C2 {
     public String m4() {
         return "C2:m4";
     }
+
+    public String m5() {
+        return "C2:m5";
+    }
 }
