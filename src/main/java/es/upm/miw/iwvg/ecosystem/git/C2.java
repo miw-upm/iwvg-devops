@@ -28,4 +28,8 @@ public class C2 {
     public String m7() {
         return "C2:m7";
     }
+
+    public String m8() {
+        return "C2:m8";
+    }
 }
