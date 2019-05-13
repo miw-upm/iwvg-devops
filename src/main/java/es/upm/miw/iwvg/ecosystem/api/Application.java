@@ -6,12 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class}) // Not: /error
+@EnableAutoConfiguration(exclude = {ErrorMvcAutoConfiguration.class}) // Not API: /error
 public class Application {
 
-    // mvn clean spring-boot:run
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(Application.class, args);// mvn clean spring-boot:run
     }
 
 }

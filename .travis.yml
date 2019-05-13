@@ -20,7 +20,7 @@ script:
 - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
 
 #SONARCLOUD
-#- mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github -Dsonar.login=$SONAR
+- mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github -Dsonar.login=$SONAR
 
 #Deploy https://iwvg-ecosystem.herokuapp.com/HelloServlet
 deploy:
