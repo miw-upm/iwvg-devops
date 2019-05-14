@@ -1,6 +1,7 @@
 package es.upm.miw.iwvg.ecosystem.junit;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class DecimalCollection {
@@ -20,10 +21,7 @@ public class DecimalCollection {
     }
 
     public double sum() {
-        assert collection != null;
-        if (this.collection.isEmpty()) {
-            throw new ArithmeticException("Empty collection");
-        }
+        this.validateIsNullOrEmpty();
         /*
         Version java 1.7
         double sum = 0;
@@ -37,18 +35,15 @@ public class DecimalCollection {
 
     }
 
+    private void validateIsNullOrEmpty() {
+        if ((this.collection == null) || this.collection.isEmpty()) {
+            throw new ArithmeticException("Null or Empty collection");
+        }
+    }
+
     public double higher() {
-        assert collection != null;
-        if (this.collection.isEmpty()) {
-            throw new ArithmeticException("Empty collection");
-        }
-        double higher = Double.NEGATIVE_INFINITY;
-        for (double item : this.collection) {
-            if (item > higher) {
-                higher = item;
-            }
-        }
-        return higher;
+        this.validateIsNullOrEmpty();
+        return Collections.max(this.collection);
     }
 
 }

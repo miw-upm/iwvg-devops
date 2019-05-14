@@ -5,6 +5,10 @@ import org.apache.logging.log4j.Logger;
 
 public class LoggerDemo {
 
+    public static void main(String[] args) {
+        new LoggerDemo().logs();
+    }
+
     public void logs() {
         Logger logger = LogManager.getLogger(this.getClass());
         logger.fatal("Log de fatal");
@@ -13,10 +17,6 @@ public class LoggerDemo {
         logger.info("Log de info");
         logger.debug("Log de debug");
         logger.trace("Log de trace");
-    }
-
-    public static void main(String[] args) {
-        new LoggerDemo().logs();
     }
 
 }

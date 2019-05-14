@@ -1,7 +1,7 @@
 ## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
-## Ingeniería Web: Visión General
-#### Ecosistema Software
-> Este proyecto es un apoyo docente de la asignatura
+## Ingeniería Web: Visión General (IWVG)
+### Ecosistema Software
+> Este proyecto es un apoyo docente de la asignatura. Cada release liberada corresponde al código utilizado en clase del curso indicado
 
 ### Estado del código
 
@@ -16,15 +16,16 @@
 * Travis-ci
 * Sonarcloud
 * Better Code Hub
+* Spring-boot
 * Heroku
 
 ### Clonar el proyecto
- Clonar el repositorio en tu equipo, **mediante consola**:
+1. Clonar el repositorio en tu equipo, **mediante consola**:
 ```sh
 > cd <folder path>
 > git clone https://github.com/miw-upm/iwvg-ecosystem
 ```
-Importar el proyecto mediante **IntelliJ IDEA**
-1. **Import Project**, y seleccionar la carpeta del proyecto.
-1. Marcar **Create Project from external model**, elegir **Maven**.
-1. **Next** … **Finish**.
+2. Importar el proyecto mediante **IntelliJ IDEA**
+   1. **Import Project**, y seleccionar la carpeta del proyecto.
+   1. Marcar **Create Project from external model**, elegir **Maven**.
+   1. **Next** … **Finish**.
