@@ -1,0 +1,24 @@
+language: java
+branches:
+  only:
+  - develop
+  - /^release-[0-999].[0-999]$/
+  - master
+notifications:
+  email:
+    recipients:
+    - xxx@xxx.es
+script:
+#Test unitario y de integracion en perfil DEV, con cobertura
+- mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
+
+# SONAR
+- mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=xxx -Dsonar.login=$SONAR
+
+# Deploy https://apaw-api-themes.herokuapp.com/swagger-ui.html
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU
+  on:
+    branch: master
