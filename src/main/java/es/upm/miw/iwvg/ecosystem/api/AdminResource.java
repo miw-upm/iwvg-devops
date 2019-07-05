@@ -20,7 +20,9 @@ public class AdminResource {
 
     @GetMapping
     public String applicationInfo() { // http://localhost:8080/api/info
-        return "Hello World!!! (" + this.applicationName + "::" + this.buildVersion + "::" + this.buildTimestamp + ")";
+        return "Hello World!!! ("
+                + this.applicationName + "::" + this.buildVersion + "::" + this.buildTimestamp
+                + ")";
     }
 
 }
