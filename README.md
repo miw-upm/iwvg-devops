@@ -36,7 +36,7 @@
 ### :movie_camera: Videos (www.youtube.com/miw-upm)
 * [Videos 2019-20 (pendientes de grabar)]()
 
-### IWVG. Ecosystem. Enunciado de la práctica
+### :page_with_curl: IWVG. Ecosystem. Enunciado de la práctica
 
 #### 1. Crear un proyecto
 Crear un proyecto Maven llamado: **iwvg.ecosystem.nombre.apellido**, versión **1.0.0**. Para ello se aporta **zip** de la plantilla. Añadir tipo de **Licencia**.
@@ -103,5 +103,26 @@ Las posibles ampliaciones son libres, o podrían ser las siguientes:
 
 #### 9. Bug
 > Suponer que la mejora 3 de la clase Fraction no es buena y se debe proceder a eliminarla. Realizar la cuarta liberación del código (_**v.1.2.1-release**_).
+
+### :dvd: [Plantilla de la práctica en _docs/iwvg-ecosystem-template.zip_](docs/iwvg-ecosystem-template.zip)
+
+### :clap: Entraga de la práctica
+Indicar como texto en la subida las siguientes URLs:
+* URL de GitHub
+* URL de Travis-CI
+* URL de Sonarcloud
+* URL de Better Code Hub
+* URL del despliegue en Heroku
+> **NOTA. Acordarse de dar al botón de envío**
+
+### :ballot_box_with_check: Criterios de evaluación (ver rúbrica)
+* Completud y corrección de lo entregado respecto al enunciado.
+* Adecuación de la temporalidad de desarrollo según el enunciado.
+* Mantenimiento de calidad del código según Travis-CI, Sonar, Better Code Hub.
+* Uso correcto del flujo de trabajo ramificado.
+* Commits correctos y completos.
+* Gestión adecuada y completa (estimación, tiempo real...) durante el desarrollo.
+* Planificación temporal adecuada y equilibrada en el desarrollo.
+* Código limpio, bien formateado y ordenado.
 
 
