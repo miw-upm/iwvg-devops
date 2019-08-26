@@ -10,6 +10,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -19,6 +20,20 @@ class SystemResourceIT {
 
     @Autowired
     private WebTestClient webTestClient;
+
+    @Test
+    void testReadBadge() {
+        String badge = new String(
+                this.webTestClient
+                        .get().uri(SystemResource.SYSTEM + SystemResource.BADGE)
+                        .exchange()
+                        .expectStatus().isOk()
+                        .expectBody(byte[].class)
+                        .returnResult().getResponseBody()
+        );
+        assertNotNull(badge);
+        assertEquals("<svg", badge.substring(0, 4));
+    }
 
     @Test
     void testReadInfo() {
