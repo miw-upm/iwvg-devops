@@ -11,11 +11,10 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/miw-upm/iwvg-ecosystem)
 
 ### Estado del código
-
 [![Build Status](https://travis-ci.org/miw-upm/iwvg-ecosystem.svg?branch=develop)](https://travis-ci.org/miw-upm/iwvg-ecosystem)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-ecosystem&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-ecosystem)
 [![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-ecosystem?branch=master)](https://bettercodehub.com/results/miw-upm/iwvg-ecosystem)
-[![Heroku](https://heroku-badge.herokuapp.com/?app=iwvg-ecosystem&root=/api)](https://iwvg-ecosystem.herokuapp.com/api)
+[![Heroku](https://iwvg-ecosystem.herokuapp.com/system/badge)](https://iwvg-ecosystem.herokuapp.com/system/version)
 
 ### Tecnologías necesarias
 * Java

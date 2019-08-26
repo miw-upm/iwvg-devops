@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureWebTestClient
 @TestPropertySource(locations = "classpath:test.properties")
-class AdminResourceIT {
+class SystemResourceIT {
 
     @Autowired
     private WebTestClient webTestClient;
@@ -23,12 +23,11 @@ class AdminResourceIT {
     @Test
     void testReadInfo() {
         String body = this.webTestClient
-                .get().uri(AdminResource.ADMINS)
+                .get().uri(SystemResource.SYSTEM + SystemResource.VERSION)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(String.class)
                 .returnResult().getResponseBody();
-        assertEquals("Hello World!!!", body.substring(0, 14));
-
+        assertEquals(3, body.split("::").length);
     }
 }
