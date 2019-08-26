@@ -3,6 +3,13 @@
 ### Ecosistema Software
 > Este proyecto es un apoyo docente de la asignatura. Cada release liberada corresponde al código utilizado en clase del curso indicado
 
+![GitHub](https://img.shields.io/github/license/miw-upm/iwvg-ecosystem)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/miw-upm/iwvg-ecosystem?include_prereleases)
+![GitHub Release Date](https://img.shields.io/github/release-date/miw-upm/iwvg-ecosystem)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/miw-upm/iwvg-ecosystem)
+![GitHub issues](https://img.shields.io/github/issues/miw-upm/iwvg-ecosystem)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/miw-upm/iwvg-ecosystem)
+
 ### Estado del código
 
 [![Build Status](https://travis-ci.org/miw-upm/iwvg-ecosystem.svg?branch=develop)](https://travis-ci.org/miw-upm/iwvg-ecosystem)
