@@ -55,6 +55,9 @@
         <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
         <!-- JUnit -->
         <junit.platform.version>1.2.0</junit.platform.version>
+        <!-- OpenAPI -->
+        <openapi.version>1.1.31</openapi.version>
+
     </properties>
 
     <dependencies>
@@ -77,6 +80,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <!-- OpenAPI ======================================================== -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>${openapi.version}</version>
         </dependency>
         <!-- API Test -->
         <dependency>
