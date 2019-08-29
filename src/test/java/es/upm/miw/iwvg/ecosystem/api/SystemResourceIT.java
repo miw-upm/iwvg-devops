@@ -25,7 +25,7 @@ class SystemResourceIT {
     void testReadBadge() {
         String badge = new String(
                 this.webTestClient
-                        .get().uri(SystemResource.SYSTEM + SystemResource.BADGE)
+                        .get().uri(SystemResource.SYSTEM + SystemResource.BADGE_URI)
                         .exchange()
                         .expectStatus().isOk()
                         .expectBody(byte[].class)
