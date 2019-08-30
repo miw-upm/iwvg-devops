@@ -8,28 +8,26 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(SystemResource.SYSTEM)
 public class SystemResource {
-
     public static final String SYSTEM = "/system";
-    public static final String BADGE_URI = "/badge";
+
+    public static final String VERSION_BADGE = "/version-badge";
     public static final String VERSION = "/version";
 
     @Value("${application.name}")
     private String applicationName;
-
     @Value("${build.version}")
     private String buildVersion;
-
     @Value("${build.timestamp}")
     private String buildTimestamp;
 
-    @GetMapping(value = BADGE_URI, produces = {"image/svg+xml"})
+    @GetMapping(value = VERSION_BADGE, produces = {"image/svg+xml"})
     public byte[] generateBadge() { // http://localhost:8080/system/badge
         return new Badge().generateBadge("Heroku", "v" + buildVersion).getBytes();
     }
 
     @GetMapping(value = VERSION)
     public String applicationInfo() {
-        return "{\"version\":\"" + this.applicationName + "::" + this.buildVersion + "::" + this.buildTimestamp + "\"}";
+        return "{\"version\":\"" + this.applicationName + "::" +
+                this.buildVersion + "::" + this.buildTimestamp + "\"}";
     }
-
 }

@@ -14,7 +14,7 @@ notifications:
 # before_install:
 # - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
-  #Test unitario y de integracion con cobertura
+  #Test unitario y de integracion con cobertura (jacoco)
   - mvn org.jacoco:jacoco-maven-plugin:prepare-agent verify
 
   #SONARCLOUD

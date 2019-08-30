@@ -17,22 +17,20 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @AutoConfigureWebTestClient
 @TestPropertySource(locations = "classpath:test.properties")
 class SystemResourceIT {
-
     @Autowired
     private WebTestClient webTestClient;
 
     @Test
     void testReadBadge() {
-        String badge = new String(
+        byte[] badge =
                 this.webTestClient
-                        .get().uri(SystemResource.SYSTEM + SystemResource.BADGE_URI)
+                        .get().uri(SystemResource.SYSTEM + SystemResource.VERSION_BADGE)
                         .exchange()
                         .expectStatus().isOk()
                         .expectBody(byte[].class)
-                        .returnResult().getResponseBody()
-        );
+                        .returnResult().getResponseBody();
         assertNotNull(badge);
-        assertEquals("<svg", badge.substring(0, 4));
+        assertEquals("<svg", new String(badge).substring(0, 4));
     }
 
     @Test
