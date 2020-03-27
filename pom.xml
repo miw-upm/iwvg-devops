@@ -3,15 +3,22 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://maven.apache.org/POM/4.0.0"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>iwvg-ecosystem</artifactId>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <artifactId>iwvg-devops</artifactId>
     <groupId>es.upm.miw</groupId>
     <version>1.4.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}.${project.artifactId}</name>
-    <description>Ecosystem</description>
+    <description>DevOps</description>
     <url>http://github.com/miw-upm/${project.artifactId}</url>
 
     <licenses>
@@ -34,13 +41,6 @@
         </developer>
     </developers>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
-
     <properties>
         <!-- Encode -->
         <encoding>UTF-8</encoding>
@@ -49,10 +49,14 @@
         <project.resources.sourceEncoding>${encoding}</project.resources.sourceEncoding>
         <!-- Java -->
         <jdk.version>1.8</jdk.version>
+        <deploy>${project.artifactId}-${project.version}</deploy>
         <!-- Maven -->
-        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.compiler.version>3.6.2</maven.compiler.version>
+        <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
+        <!-- Maven. Test de Integración -->
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
+        <jacoco.version>0.8.5</jacoco.version>
         <!-- JUnit -->
         <junit.platform.version>1.2.0</junit.platform.version>
         <!-- OpenAPI -->
@@ -117,6 +121,26 @@
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
