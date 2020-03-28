@@ -39,12 +39,12 @@
    1. **Next** … **Finish**.
 
 ### :book: Diapositivas
-* [Diapositivas de Ecosistemas](docs/miw-iwvg-ecosistema-diapositivas.pdf)   
+* [Diapositivas de Ecosistemas](docs/miw-iwvg-devops-diapositivas.pdf)   
 
 ### :movie_camera: Videos (www.youtube.com/miw-upm)
 * Lista de reproducción: **IWVG. Ecosistema Software (Curso 2019-20)**
 
-### :dvd: [Plantilla de la práctica en _docs/iwvg-ecosystem-template.zip_](docs/iwvg-ecosystem-template.zip)
+### :dvd: [Plantilla de la práctica en _docs/iwvg-ecosystem-template.zip_](docs/iwvg-devops-template.zip)
 
 ### :page_with_curl: IWVG. Ecosystem. Enunciado de la práctica
 
