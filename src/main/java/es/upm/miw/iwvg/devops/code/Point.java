@@ -1,10 +1,14 @@
-package es.upm.miw.iwvg.ecosystem.junit;
+package es.upm.miw.iwvg.devops.code;
 
 public class Point {
 
     private int x;
 
     private int y;
+
+    public Point() {
+        this(0, 0);
+    }
 
     public Point(int x, int y) {
         this.x = x;
@@ -15,16 +19,16 @@ public class Point {
         this(xy, xy);
     }
 
-    public Point() {
-        this(0, 0);
-    }
-
     public double module() {
         return Math.sqrt((double) this.x * this.x + this.y * this.y);
     }
 
     public double phase() {
         return Math.atan((double) this.y / this.x);
+    }
+
+    public void translateXOrigin(int x) {
+        this.x -= x;
     }
 
     public void translateOrigin(Point origin) {

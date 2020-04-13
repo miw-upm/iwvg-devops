@@ -1,11 +1,9 @@
-package es.upm.miw.iwvg.ecosystem.junit;
+package es.upm.miw.iwvg.devops.code;
 
-import org.apache.logging.log4j.LogManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class DecimalCollectionTest {
     private DecimalCollection decimalCollection;
@@ -36,19 +34,23 @@ class DecimalCollectionTest {
     }
 
     @Test
-    void testSumArithmeticExceptionIfEmpty() {
-        ArithmeticException exception = assertThrows(ArithmeticException.class, () -> new DecimalCollection().sum());
-        LogManager.getLogger(this.getClass()).debug(exception.getMessage());
+    void testSumEvenValues() {
+        assertEquals(4.0, this.decimalCollection.sumEvenValues(), 10e-5);
     }
 
     @Test
-    void testHigher() {
-        assertEquals(3.0, this.decimalCollection.higher(), 10e-5);
+    void testSumIfEmpty() {
+        assertEquals(Double.NaN, new DecimalCollection().sum(), 10e-5);
     }
 
     @Test
-    void testHigherArithmeticExceptionIfEmpty() {
-        assertThrows(ArithmeticException.class, () -> new DecimalCollection().higher());
+    void testMax() {
+        assertEquals(3.0, this.decimalCollection.max(), 10e-5);
+    }
+
+    @Test
+    void testMaxIfEmpty() {
+        assertEquals(Double.NaN, new DecimalCollection().max(), 10e-5);
     }
 
 }

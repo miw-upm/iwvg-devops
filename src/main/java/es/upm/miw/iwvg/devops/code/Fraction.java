@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.junit;
+package es.upm.miw.iwvg.devops.code;
 
 /**
  * Conceptos: Las fracciones propias son aquellas cuyo numerador es menor que el denominador
@@ -23,8 +23,6 @@ package es.upm.miw.iwvg.ecosystem.junit;
  * <p>
  * La división de dos fracciones es otra fracción que tiene: Por numerador el producto de los extremos. Por denominador el producto de los
  * medios. Invertir fraccion
- *
- * @author jbernal
  */
 public class Fraction {
 
@@ -41,16 +39,31 @@ public class Fraction {
         this(1, 1);
     }
 
-    public double decimal() {
-        return (double) numerator / denominator;
-    }
-
     public int getNumerator() {
         return numerator;
+    }
+
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
     }
 
     public int getDenominator() {
         return denominator;
     }
 
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+
+    public double decimal() {
+        return (double) numerator / denominator;
+    }
+
+    @Override
+    public String toString() {
+        return "Fraction{" +
+                "numerator=" + numerator +
+                ", denominator=" + denominator +
+                '}';
+    }
 }

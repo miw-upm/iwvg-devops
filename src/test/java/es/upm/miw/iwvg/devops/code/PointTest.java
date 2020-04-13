@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg.ecosystem.junit;
+package es.upm.miw.iwvg.devops.code;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,6 +41,13 @@ class PointTest {
     @Test
     void testPhase() {
         assertEquals(0.9828, point.phase(), 10e-5);
+    }
+
+    @Test
+    void testTranslateXOrigin() {
+        this.point.translateXOrigin(1);
+        assertEquals(1, point.getX());
+        assertEquals(3, point.getY());
     }
 
     @Test
