@@ -2,26 +2,19 @@ language: java
 branches:
   only:
     - develop
-    - /^release-[0-999].[0-999]$/
+    - "/^release-[0-999].[0-999]$/"
     - master
 notifications:
+  slack:
+    secure: bBg+IS3qpldhTvnJlrIFfPCq8o+D9jcyENsds+ideplBPYAItCX15VfJlE/WBg4bwGzNSvDpe6W0Q+MA6UEFqsca3+XdGyUfesUFjzQRuIa8nVEPTLHv29N2OWY3is1nxIKihj8nEirEj7P7T3NcKrhBFuBRY9IXmjDCtnNSlx8lgRWu+0diana4Yj1emw58vzKricN6a5ZAgq6GiFIPKqmw6b7Ul8TU5e+GVn0E3cGFpqnaslyM22ddOewFPd49L4MlgvgqByEkB5y5A3Zim4Id1U6wIWNvvOWt9yPO+I/Dt0v9IqEaYIWqRWDY6l5eevXsgJPn9neBZ2CuxH2i6quzf93mbB8hdZXY58dwa03at8QLkwA5lBFiAOxB25J/GC1Smx9OLVHr0AJIC7HhepN1uwqhP4hGCW849y4aB3YALu7wF2zs0v/iC54Lrs+1Kva2uyUygDPhInJFftuPsYQO+1s2PgbC6q8UzkxXOCEFAKVHJJ6BJRZReF1iYOJR/KNYBwjuUnT6YTlMZwybY/gY/73ospO7blQwsJbopE4EWpGCzNSRdTjujGaIPBfIi0GMll+ILiinI/DvKgL8v7NQeaZya2m7BpxrienJ7ZPKjAgXQ4hr1OruUob3eBq7XZ3F8BDFbSbS1YOaSqn/cJhGMlSQ3E2V9vSLaWN9FIs=
   email:
     recipients:
       - j.bernal@upm.es
-# services:
-# - mysql
-# - mongodb
-# before_install:
-# - mysql -e 'CREATE DATABASE IF NOT EXISTS forge;'
 script:
-  ##Test unitario y de integracion con cobertura (jacoco) & SONARCLOUD
-  - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github -Dsonar.login=$SONAR
-
-#Deploy https://iwvg-ecosystem.herokuapp.com/api
+  - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github
+    -Dsonar.login=$SONAR
 deploy:
   provider: heroku
-  api_key:
-    secure: $HEROKU
+  api_key: $HEROKU
   on:
     branch: master
-#  app: iwvg-ecosystem, por defecto, nombre del artefacto

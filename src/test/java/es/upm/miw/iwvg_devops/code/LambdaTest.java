@@ -35,7 +35,6 @@ class LambdaTest {
         assertEquals(Arrays.asList(1, 1, 2), list);
     }
 
-
     @Test
     void testPredicate() {
         List<String> list = Stream.of("one", "two", "three", "two").filter(Lambda.equalsTo2).collect(Collectors.toList());
@@ -49,3 +48,4 @@ class LambdaTest {
     }
 
 }
+
