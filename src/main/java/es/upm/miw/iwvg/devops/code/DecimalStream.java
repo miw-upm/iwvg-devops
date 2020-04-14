@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 public class DecimalStream {
 
-    private List<Double> collection; //ERROR: private Stream<Double> stream;
+    private List<Double> collection;
 
     public DecimalStream() {
         this.collection = new ArrayList<>();
@@ -24,7 +24,7 @@ public class DecimalStream {
     private double sum(Stream<Double> stream) {
         return stream
                 .reduce(Double::sum)
-                .orElse(Double.NaN); // Optional;
+                .orElse(Double.NaN);
     }
 
     public double sum() {
@@ -43,7 +43,7 @@ public class DecimalStream {
     public double max() {
         return this.collection.stream()
                 .max(Double::compareTo)
-                .orElse(Double.NaN);  // Optional;
+                .orElse(Double.NaN);
     }
 
 }

@@ -18,13 +18,13 @@ public class DecimalFunctionalStream {
     public double sum(Stream<Double> stream) {
         return stream
                 .reduce(Double::sum)
-                .orElse(Double.NaN);  // Optional;
+                .orElse(Double.NaN);
     }
 
     public double max(Stream<Double> stream) {
         return stream
                 .max(Double::compareTo)
-                .orElse(Double.NaN);  // Optional;
+                .orElse(Double.NaN);
     }
 
 }
