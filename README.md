@@ -1,18 +1,18 @@
 ## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
 ## Ingeniería Web: Visión General (IWVG)
-### Ecosistema Software
+### DevOps
 > Este proyecto es un apoyo docente de la asignatura. Cada release liberada corresponde al código utilizado en clase del curso indicado
 
-[![GitHub](https://img.shields.io/github/license/miw-upm/iwvg-ecosystem?color=informational)](https://github.com/miw-upm/iwvg-ecosystem/blob/develop/LICENSE.md)
-[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/miw-upm/iwvg-ecosystem?color=informational)](https://github.com/miw-upm/iwvg-ecosystem/releases)
-![GitHub Release Date](https://img.shields.io/github/release-date/miw-upm/iwvg-ecosystem?color=informational)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/miw-upm/iwvg-ecosystem)
-![GitHub issues](https://img.shields.io/github/issues/miw-upm/iwvg-ecosystem?color=important)
-![GitHub closed issues](https://img.shields.io/github/issues-closed/miw-upm/iwvg-ecosystem?color=informational)
+[![GitHub](https://img.shields.io/github/license/miw-upm/iwvg-devops?color=informational)](https://github.com/miw-upm/iwvg-ecosystem/blob/develop/LICENSE.md)
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/miw-upm/iwvg-devops?color=informational)](https://github.com/miw-upm/iwvg-devops/releases)
+![GitHub Release Date](https://img.shields.io/github/release-date/miw-upm/iwvg-devops?color=informational)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/miw-upm/iwvg-devops)
+![GitHub issues](https://img.shields.io/github/issues/miw-upm/iwvg-devops?color=important)
+![GitHub closed issues](https://img.shields.io/github/issues-closed/miw-upm/iwvg-devops?color=informational)
 
 ### Estado del código
 [![Build Status](https://travis-ci.org/miw-upm/iwvg-devops.svg?branch=develop)](https://travis-ci.org/miw-upm/iwvg-devops)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-ecosystem&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-ecosystem)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops)
 [![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-ecosystem?branch=master)](https://bettercodehub.com/results/miw-upm/iwvg-ecosystem)
 [![Heroku broken](https://iwvg-devops.herokuapp.com/system/version-badge)](https://iwvg-devops.herokuapp.com/swagger-ui.html)
 
@@ -39,7 +39,7 @@
    1. **Next** … **Finish**.
 
 ### :book: Diapositivas
-* [Diapositivas de Ecosistemas](docs/miw-iwvg-devops-diapositivas.pdf)   
+* [Diapositivas de DevOps](docs/miw-iwvg-devops-slides.pdf)   
 
 ### :movie_camera: Videos (www.youtube.com/miw-upm)
 * Lista de reproducción: **IWVG. Ecosistema Software (Curso 2019-20)**

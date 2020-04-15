@@ -13,7 +13,9 @@ public class Searches {
 
     public Stream<Integer> findUserFractionNumeratorByFamilyName(String familyName) {
         return new UsersDatabaseSeeding().findAll()
+                .peek(x -> System.out.println("before: " + x))
                 .filter(user -> familyName.equals(user.getFamilyName()))
+                .peek(x -> System.out.println("after: " + x))
                 .flatMap(user -> user.getFractions().stream())
                 .map(Fraction::getNumerator);
     }

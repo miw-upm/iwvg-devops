@@ -53,12 +53,12 @@
         <!-- Maven -->
         <maven.compiler.version>3.6.2</maven.compiler.version>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
-        <!-- Maven. Test de Integración -->
+        <!-- Maven. integration test -->
         <maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>2.21.0</maven-failsafe-plugin.version>
+        <junit-platform-surefire-provider-version>1.2.0</junit-platform-surefire-provider-version>
+        <!-- coverage report -->
         <jacoco.version>0.8.5</jacoco.version>
-        <!-- JUnit -->
-        <junit.platform.version>1.2.0</junit.platform.version>
         <!-- OpenAPI -->
         <openapi.version>1.1.31</openapi.version>
 
@@ -157,7 +157,7 @@
                     <dependency>
                         <groupId>org.junit.platform</groupId>
                         <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform.version}</version>
+                        <version>${junit-platform-surefire-provider-version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
@@ -169,7 +169,7 @@
                     <dependency>
                         <groupId>org.junit.platform</groupId>
                         <artifactId>junit-platform-surefire-provider</artifactId>
-                        <version>${junit.platform.version}</version>
+                        <version>${junit-platform-surefire-provider-version}</version>
                     </dependency>
                 </dependencies>
                 <executions>

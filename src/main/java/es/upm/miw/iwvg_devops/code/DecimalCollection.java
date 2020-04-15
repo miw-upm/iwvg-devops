@@ -37,7 +37,6 @@ public class DecimalCollection {
     }
 
     public double sumEvenValues() {
-        assert this.collection != null;
         double sum = Double.NaN;
         for (double item : this.collection) {
             if (0 == item % 2) {
@@ -48,7 +47,6 @@ public class DecimalCollection {
     }
 
     public double max() {
-        assert this.collection != null;
         double max = Double.NaN;
         for (double item : this.collection) {
             if (Double.isNaN(max) || item > max) {

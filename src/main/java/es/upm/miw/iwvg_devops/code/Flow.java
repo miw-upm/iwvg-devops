@@ -21,12 +21,14 @@ public class Flow {
     }
 
     public double max(Stream<Integer> stream) {
-        return stream.max(Integer::compareTo)
+        return stream
+                .max(Integer::compareTo)
                 .orElseThrow(ArithmeticException::new);  // Optional
     }
 
     public double sum(Stream<Integer> stream) {  //overage
-        return stream.reduce(Integer::sum)
+        return stream
+                .reduce(Integer::sum)
                 .orElseThrow(ArithmeticException::new);   // Optional
     }
 
