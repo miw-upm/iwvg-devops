@@ -1,12 +1,14 @@
 package es.upm.miw.iwvg_devops.code;
 
+import org.apache.logging.log4j.LogManager;
+
 import java.util.Arrays;
 import java.util.stream.LongStream;
 
 public class ParallelStream {
 
     public static void main(String[] args) {
-        System.out.println("PROCESSORS: " + Runtime.getRuntime().availableProcessors());
+        LogManager.getLogger(ParallelStream.class).info("PROCESSORS: " + Runtime.getRuntime().availableProcessors());
         new ParallelStream().run();
 
     }
@@ -15,7 +17,7 @@ public class ParallelStream {
         long time = System.nanoTime();
         long result = LongStream.range(0, n)
                 .reduce(0, Long::sum);
-        System.out.println("SEQUENTIAL RANGE: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
+        LogManager.getLogger(this.getClass()).info("SEQUENTIAL RANGE: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
     }
 
     private void sequentialCollection(int n) {
@@ -28,7 +30,7 @@ public class ParallelStream {
         for (int i = 0; i < n; i++) {
             result += array[i];
         }
-        System.out.println("SEQUENTIAL COLLECTION: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
+        LogManager.getLogger(this.getClass()).info("SEQUENTIAL COLLECTION: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
     }
 
     private void parallelRange(int n) {
@@ -36,7 +38,7 @@ public class ParallelStream {
         long result = LongStream.range(0, n)
                 .parallel()
                 .reduce(0L, Long::sum);
-        System.out.println("PARALLEL RANGE: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
+        LogManager.getLogger(this.getClass()).info("PARALLEL RANGE: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
     }
 
     private void parallelIterative(int n) {
@@ -45,7 +47,7 @@ public class ParallelStream {
                 .limit(n)
                 .parallel()
                 .reduce(0L, Long::sum);
-        System.out.println("PARALLEL ITERATIVE: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
+        LogManager.getLogger(this.getClass()).info("PARALLEL ITERATIVE: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
     }
 
     private void parallelArray(int n) {
@@ -54,7 +56,7 @@ public class ParallelStream {
         long result = Arrays.stream(array)
                 .parallel()
                 .reduce(0L, Long::sum);
-        System.out.println("PARALLEL ARRAY: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
+        LogManager.getLogger(this.getClass()).info("PARALLEL ARRAY: Value: " + result + ", Time (ms): " + (System.nanoTime() - time) / 1000_000);
     }
 
     private void run() {

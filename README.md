@@ -1,6 +1,5 @@
 ## [Máster en Ingeniería Web por la Universidad Politécnica de Madrid (miw-upm)](http://miw.etsisi.upm.es)
-## Ingeniería Web: Visión General (IWVG)
-### DevOps
+## Ingeniería Web: Visión General (IWVG) DevOps
 > Este proyecto es un apoyo docente de la asignatura. Cada release liberada corresponde al código utilizado en clase del curso indicado
 
 [![GitHub](https://img.shields.io/github/license/miw-upm/iwvg-devops?color=informational)](https://github.com/miw-upm/iwvg-ecosystem/blob/develop/LICENSE.md)
@@ -13,25 +12,17 @@
 ### Estado del código
 [![Build Status](https://travis-ci.org/miw-upm/iwvg-devops.svg?branch=develop)](https://travis-ci.org/miw-upm/iwvg-devops)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops)
-[![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-ecosystem?branch=master)](https://bettercodehub.com/results/miw-upm/iwvg-ecosystem)
+[![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-devops?branch=master)](https://bettercodehub.com/results/miw-upm/iwvg-devops)
 [![Heroku broken](https://iwvg-devops.herokuapp.com/system/version-badge)](https://iwvg-devops.herokuapp.com/swagger-ui.html)
 
 ### Tecnologías necesarias
-* Java
-* Maven
-* GitHub
-* Travis-ci
-* Sonarcloud
-* Better Code Hub
-* Spring-boot
-* Heroku
-* OpenAPI & Swagger
+`Java` `Maven` `GitHub` `Travis-ci` `Sonarcloud` `Better Code Hub` `Slack` `Spring-boot` `Heroku` `OpenAPI`
 
-### Clonar el proyecto
+### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:
 ```sh
 > cd <folder path>
-> git clone https://github.com/miw-upm/iwvg-ecosystem
+> git clone https://github.com/miw-upm/iwvg-devops
 ```
 2. Importar el proyecto mediante **IntelliJ IDEA**
    1. **Import Project**, y seleccionar la carpeta del proyecto.
@@ -42,14 +33,14 @@
 * [Diapositivas de DevOps](docs/miw-iwvg-devops-slides.pdf)   
 
 ### :movie_camera: Videos (www.youtube.com/miw-upm)
-* Lista de reproducción: **IWVG. Ecosistema Software (Curso 2019-20)**
+* Lista de reproducción: **IWVG. Devops Software (Curso 2019-20)**
 
 ### :dvd: [Plantilla de la práctica en _docs/iwvg-ecosystem-template.zip_](docs/iwvg-devops-template.zip)
 
-### :page_with_curl: IWVG. Ecosystem. Enunciado de la práctica
+### :page_with_curl: IWVG. Devops. Enunciado de la práctica
 
 #### 1. Crear un proyecto
-Crear un proyecto Maven llamado: **iwvg-ecosystem-nombre-apellido**, versión **1.0.0**. Para ello se aporta **zip** de la plantilla. Añadir tipo de **Licencia**.
+Crear un proyecto Maven llamado: **iwvg-devops-nombre-apellido**, versión **1.0.0**. Para ello se aporta **zip** de la plantilla.
 > Recordar editar el pom y cambiar el nombre del artefacto (artifactId).   
 > Recordar cambiar el nombre de la  carpeta.   
 > Importarlo desde IntelliJ.   

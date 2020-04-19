@@ -1,4 +1,5 @@
 language: java
+#jdk: openjdk14 #problems with sonar-maven-plugin
 branches:
   only:
     - develop
@@ -10,9 +11,10 @@ notifications:
   email:
     recipients:
       - j.bernal@upm.es
+install:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 script:
-  - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github
-    -Dsonar.login=$SONAR
+  - mvn verify sonar:sonar -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=miw-upm-github -Dsonar.login=$SONAR
 deploy:
   provider: heroku
   api_key: $HEROKU
