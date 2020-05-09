@@ -22,14 +22,14 @@ public class Flow {
 
     public double max(Stream<Integer> stream) {
         return stream
-                .max(Integer::compareTo)
-                .orElseThrow(ArithmeticException::new);  // Optional
+                .max(Integer::compareTo) // Optional<Double>
+                .orElseThrow(ArithmeticException::new);
     }
 
     public double sum(Stream<Integer> stream) {  //overage
         return stream
-                .reduce(Integer::sum)
-                .orElseThrow(ArithmeticException::new);   // Optional
+                .reduce(Integer::sum )// Optional<Double>
+                .orElseThrow(ArithmeticException::new);
     }
 
     public double mul(Stream<Integer> stream) {
@@ -44,7 +44,7 @@ public class Flow {
         return stream.map(value -> value + 1);
     }
 
-    public Double incrementAndSum(Stream<Integer> stream) {
+    public double incrementAndSum(Stream<Integer> stream) {
         return stream
                 .map(value -> value + 1)
                 .mapToDouble(Double::valueOf)
@@ -56,11 +56,11 @@ public class Flow {
         return stream.filter(value -> value >= 0);
     }
 
-    public Boolean isValueContent(Stream<Integer> stream, Integer value) {
+    public boolean isValueContent(Stream<Integer> stream, Integer value) {
         return stream.anyMatch(value::equals);
     }
 
-    public Boolean areAllPositive(Stream<Integer> stream) {
+    public boolean areAllPositive(Stream<Integer> stream) {
         return stream.allMatch(value -> value >= 0);
     }
 

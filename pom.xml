@@ -60,7 +60,7 @@
         <!-- coverage report -->
         <jacoco.version>0.8.5</jacoco.version>
         <!-- OpenAPI -->
-        <openapi.version>1.1.31</openapi.version>
+        <openapi.version>1.3.9</openapi.version>
 
     </properties>
 
@@ -78,7 +78,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-        <!-- OpenAPI -->
+        <!-- OpenAPI http://localhost:8080/swagger-ui.html -->
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
