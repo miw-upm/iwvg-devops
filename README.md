@@ -2,7 +2,7 @@
 ## Ingeniería Web: Visión General (IWVG) DevOps
 > Este proyecto es un apoyo docente de la asignatura. Cada release liberada corresponde al código utilizado en clase del curso indicado
 
-[![GitHub](https://img.shields.io/github/license/miw-upm/iwvg-devops?color=informational)](https://github.com/miw-upm/iwvg-ecosystem/blob/develop/LICENSE.md)
+[![GitHub](https://img.shields.io/github/license/miw-upm/iwvg-devops?color=informational)](https://github.com/miw-upm/iwvg-devops/blob/develop/LICENSE.md)
 [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/miw-upm/iwvg-devops?color=informational)](https://github.com/miw-upm/iwvg-devops/releases)
 ![GitHub Release Date](https://img.shields.io/github/release-date/miw-upm/iwvg-devops?color=informational)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/miw-upm/iwvg-devops)
@@ -12,7 +12,7 @@
 ### Estado del código
 [![Build Status](https://travis-ci.org/miw-upm/iwvg-devops.svg?branch=develop)](https://travis-ci.org/miw-upm/iwvg-devops)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops)
-[![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-devops?branch=master)](https://bettercodehub.com/results/miw-upm/iwvg-devops)
+[![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-devops?branch=develop)](https://bettercodehub.com/results/miw-upm/iwvg-devops)
 [![Heroku broken](https://iwvg-devops.herokuapp.com/system/version-badge)](https://iwvg-devops.herokuapp.com/swagger-ui.html)
 
 ### Tecnologías necesarias
@@ -33,9 +33,9 @@
 * [Diapositivas de DevOps](docs/miw-iwvg-devops-slides.pdf)   
 
 ### :movie_camera: Videos (www.youtube.com/miw-upm)
-* Lista de reproducción: **IWVG. Devops Software (Curso 2019-20)**
+* Lista de reproducción: **IWVG. Devops Software (Curso 2020-21)**
 
-### :dvd: [Plantilla de la práctica en _docs/iwvg-ecosystem-template.zip_](docs/iwvg-devops-template.zip)
+### :dvd: [Plantilla de la práctica en _docs/iwvg-devops-template.zip_](docs/iwvg-devops-template.zip)
 
 ### :page_with_curl: IWVG. Devops. Enunciado de la práctica
 
@@ -62,48 +62,37 @@ Se crearán las siguientes 4 historias (**Issues**) pero se trabajarán en las r
 
 #### 5. Sprint 2. Preparación del software a desarrollar
 Se crearán las siguientes 4 historias (**Issues**).
-* Clases :one:**Point** & :five:**PointTest**.
+* Clases :one:**Fraction** & :five:**FractionTest**.
 * Clases :two:**User** & :three:**UserTest**.
-* Clases :four:**DecimalCollection** & :eight:**DecimalCollectionTest**.
-* Clases :six:**Fraction** & :seven:**FractionTest**.
+* Clases :four:**UsersDatabaseSeeding**.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**. Las clases Point, User, DecimalCollection, Fraction se podrán copiar de las dadas en clase.
 
 #### 6. Release
 > Realizar la segunda liberación del código (_**v.1.1.0-release**_)
 
-#### 7. Sprint 3. Preparación mejoras del software
-Se crearán las siguientes 4 historias (**Issues**).
-* **Point**: :one:mejora 1 y :four:mejora 2.
-* **User**: :two:mejora 1 y :seven:mejora 2.
-* **DecimalCollection**: :three:mejora 1 y :nine:mejora 2.
-* **Fraction**: :five:mejora 1, :six:mejora 2 y :eight:mejora 3.
-> :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**.
+#### 7. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**Issues**) por cada búsqueda, con el test correspondiente.
 
-Las posibles ampliaciones son libres, o podrían ser las siguientes:   
-&nbsp;&nbsp;&nbsp;**Point**   
-> Aumentar a una tercera coordenada.   
-> Limitar los límites posibles: 0..100, -10..+10...   
-> Poder modificar las coordenadas.
-
-&nbsp;&nbsp;&nbsp;**User**   
-> Presentar el nombre en mayúsculas.   
-> Incluir métodos con otras formas de presentar el nombre completo.   
-> Permitir nombres compuestos, separados por blancos y controlar las mayúsculas y minúsculas.
-
-&nbsp;&nbsp;&nbsp;**DecimalCollection**   
-> Incluir métodos como menor, multiplicar, tamaño, media...
-
-&nbsp;&nbsp;&nbsp;**Fraction**
-> Incluir métodos como isPropia, isImpropia. Las fracciones propias son aquellas cuyo numerador es menor que el denominador, y las fracciones impropias el resto.    
-> Incluir el método isEquivalente. Dos fracciones son equivalentes cuando el producto de extremos es igual al producto de medios.   
-> Incluir métodos para comparar fracciones: mayor, menor.   
-> Incluir métodos para sumar, restar, multiplicar o dividir fracciones.      
+* `1` Stream&lt;String> findUserIdByAnyProperFraction();
+* `2` Fraction findFractionMultiplicationByUserFamilyName(String familyName);
+* `3` Fraction findFirstFractionDivisionByUserId(String id);
+* `4` Double findFirstDecimalFractionByUserName(String name);
+* `5` Stream&lt;String> findUserIdByAllProperFraction();
+* `6` Stream&lt;Double> findDecimalImproperFractionByUserName(String name);
+* `7` Fraction findFirstProperFractionByUserId(String id);
+* `8` Stream&lt;String> findUserFamilyNameByImproperFraction();
+* `9` Fraction findHighestFraction();
+* `a` Stream&lt;String> findUserNameByAnyImproperFraction();
+* `b` Stream&lt;String> findUserFamilyNameByAllNegativeSignFractionDistinct();
+* `c` Stream&lt;Double> findDecimalFractionByUserName(String name);
+* `d` Stream&lt;Double> findDecimalFractionByNegativeSignFraction();
+* `e` Fraction findFractionAdditionByUserId(String id);
+* `f` Fraction findFirstFractionSubtractionByUserName(String name);
 
 #### 8. Release
 > Realizar la tercera liberación del código (_**v.1.2.0-release**_)
 
 #### 9. Bug
-> Suponer que la mejora 3 de la clase Fraction no es buena y se debe proceder a eliminarla. Realizar la cuarta liberación del código (_**v.1.2.1-release**_).
+> Suponer que la búsqueda 3 anterior no es buena y se debe proceder a modificarla. Realizar la cuarta liberación del código (_**v.1.2.1-release**_).
 
 ### :clap: Entraga de la práctica
 Indicar como texto en la subida la **URL de GitHub**
@@ -118,4 +107,3 @@ Indicar como texto en la subida la **URL de GitHub**
 * Gestión adecuada y completa (estimación, tiempo real...) durante el desarrollo.
 * Planificación temporal adecuada y equilibrada en el desarrollo.
 * Código limpio, bien formateado y ordenado.
-
