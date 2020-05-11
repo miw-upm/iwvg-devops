@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.rest;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,9 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+import static es.upm.miw.iwvg_devops.rest.SystemResource.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -22,25 +24,23 @@ class SystemResourceIT {
 
     @Test
     void testReadBadge() {
-        byte[] badge =
-                this.webTestClient
-                        .get().uri(SystemResource.SYSTEM + SystemResource.VERSION_BADGE)
-                        .exchange()
-                        .expectStatus().isOk()
-                        .expectBody(byte[].class)
-                        .returnResult().getResponseBody();
-        assertNotNull(badge);
-        assertEquals("<svg", new String(badge).substring(0, 4));
+        this.webTestClient
+                .get().uri(SYSTEM + VERSION_BADGE)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(byte[].class)
+                .value(Assertions::assertNotNull)
+                .value(svg -> assertTrue(new String(svg).startsWith("<svg")));
     }
 
     @Test
     void testReadInfo() {
-        String body = this.webTestClient
-                .get().uri(SystemResource.SYSTEM + SystemResource.VERSION)
+        this.webTestClient
+                .get().uri(SYSTEM + APP_INFO)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(String.class)
-                .returnResult().getResponseBody();
-        assertEquals(3, body.split("::").length);
+                .value(Assertions::assertNotNull)
+                .value(body -> assertEquals(3, body.split("::").length));
     }
 }

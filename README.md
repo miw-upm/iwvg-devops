@@ -92,7 +92,7 @@ Se crearán las siguientes 4 historias (**Issues**).
 > Realizar la tercera liberación del código (_**v.1.2.0-release**_)
 
 #### 9. Bug
-> Suponer que la búsqueda 3 anterior no es buena y se debe proceder a modificarla. Realizar la cuarta liberación del código (_**v.1.2.1-release**_).
+> Suponer que la búsqueda 3 anterior no es buena y se debe proceder a modificarla. Realizar un cambio y proceder a la cuarta liberación del código (_**v.1.2.1-release**_).
 
 ### :clap: Entraga de la práctica
 Indicar como texto en la subida la **URL de GitHub**
