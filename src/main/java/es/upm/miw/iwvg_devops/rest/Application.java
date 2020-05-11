@@ -1,4 +1,4 @@
-package es.upm.miw.iwvg_devops.api;
+package es.upm.miw.iwvg_devops.rest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

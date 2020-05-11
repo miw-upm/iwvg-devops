@@ -35,7 +35,7 @@
 ### :movie_camera: Videos (www.youtube.com/miw-upm)
 * Lista de reproducción: **IWVG. Devops Software (Curso 2020-21)**
 
-### :dvd: [Plantilla de la práctica en _docs/iwvg-devops-template.zip_](docs/iwvg-devops-template.zip)
+### :dvd: [Plantilla de la práctica en _docs/template-webflux.zip_](docs/template-webflux.zip)
 
 ### :page_with_curl: IWVG. Devops. Enunciado de la práctica
 
@@ -49,7 +49,7 @@ Crear un proyecto Maven llamado: **iwvg-devops-nombre-apellido**, versión **1.0
 #### 2. Preparar la gestión mediante Scrum
 > Crear un proyecto de gestión en GitHub y prepararlo para la metodología de Scrum (columnas, etiquetas, hitos...).   
 
-#### 3. Sprint 1. Preparación del ecosystema
+#### 3. Sprint 1. Preparación del ecosistema
 Se crearán las siguientes 4 historias (**Issues**) pero se trabajarán en las ramas **develop** & **master**.
 * :one: Integración continua con **Travis-CI**. Incluir **Badge** en README con **link** a la cuenta de Travis-CI.
 * :two: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
