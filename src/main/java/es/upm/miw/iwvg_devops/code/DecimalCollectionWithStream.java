@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class DecimalStream {
+public class DecimalCollectionWithStream {
 
     private List<Double> collection; // Error: Stream<Double>, un solo uso
 
-    public DecimalStream() {
+    public DecimalCollectionWithStream() {
         this.collection = new ArrayList<>();
     }
 

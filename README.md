@@ -64,7 +64,7 @@ Se crearán las siguientes 4 historias (**Issues**) pero se trabajarán en las r
 Se crearán las siguientes 4 historias (**Issues**).
 * Clases :one:**Fraction** & :five:**FractionTest**.
 * Clases :two:**User** & :three:**UserTest**.
-* Clases :four:**UsersDatabaseSeeding**.
+* Clases :four:**UsersDatabase**.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**. Las clases Point, User, DecimalCollection, Fraction se podrán copiar de las dadas en clase.
 
 #### 6. Release
@@ -72,6 +72,7 @@ Se crearán las siguientes 4 historias (**Issues**).
 
 #### 7. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**Issues**) por cada búsqueda, con el test correspondiente.
 
+* `0` Stream&lt;String> findUserFamilyNameInitialByAnyProperFraction();
 * `1` Stream&lt;String> findUserIdByAnyProperFraction();
 * `2` Fraction findFractionMultiplicationByUserFamilyName(String familyName);
 * `3` Fraction findFirstFractionDivisionByUserId(String id);

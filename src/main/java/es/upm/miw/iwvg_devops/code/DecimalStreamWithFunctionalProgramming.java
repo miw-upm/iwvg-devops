@@ -2,7 +2,7 @@ package es.upm.miw.iwvg_devops.code;
 
 import java.util.stream.Stream;
 
-public class DecimalFunctionalStream {
+public class DecimalStreamWithFunctionalProgramming {
 
     public long size(Stream<Double> stream) {
         return stream
