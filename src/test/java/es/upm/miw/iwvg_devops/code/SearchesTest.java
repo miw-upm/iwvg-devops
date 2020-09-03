@@ -17,13 +17,13 @@ class SearchesTest {
 
     @Test
     void testFindUserFractionNumeratorByFamilyName() {
-        assertEquals(List.of(2, 4, 0, 1, 1), new Searches().findUserFractionNumeratorByFamilyName("Torres")
+        assertEquals(List.of(2, 4, 0, 1, 1), new Searches().findFractionNumeratorByUserFamilyName("Torres")
                 .collect(Collectors.toList()));
     }
 
     @Test
     void testFindFamilyNameByFractionDenominator() {
-        assertEquals(List.of("López", "Torres"), new Searches().findFamilyNameByFractionDenominator(2)
+        assertEquals(List.of("López", "Torres"), new Searches().findUserFamilyNameByFractionDenominator(2)
                 .collect(Collectors.toList()));
     }
 

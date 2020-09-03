@@ -8,16 +8,16 @@ import java.util.function.*;
 public class Lambda {
 
     public static final Consumer<String> logInfo = // accept(T)
-            LogManager.getLogger(Lambda.class)::info;
+            LogManager.getLogger(Lambda.class)::info;  // item ->: implicit
 
     public static final Consumer<String> logInfoDetail = // accept(T)
             msg -> LogManager.getLogger(Lambda.class).info("Consumer: {}", msg);
 
     public static final Function<String, Integer> convertToInt = // apply(T):R
-            Integer::parseInt; //return implicit
+            Integer::parseInt; // item -> & return: implicit
 
     public static final Function<String, Integer> convertToIntPlus1 = // apply(T):R
-            value -> Integer.parseInt(value) + 1; //return implicit
+            value -> Integer.parseInt(value) + 1; //return: implicit
 
     public static final Function<String, Integer> convertToIntZeroTo1 = // apply(T):R
             value -> {
@@ -29,17 +29,17 @@ public class Lambda {
             };
 
     public static final Predicate<String> equalsTo2 = // test(T):boolean
-            "two"::equals;
+            "two"::equals; //return: implicit
 
     public static final Supplier<String> generateDots = // get(): T
-            () -> "...";
+            () -> "..."; //return: implicit
 
     public static final BiConsumer<String, String> biLogInfo =  // apply(T,U):R
             (msg1, msg2) -> LogManager.getLogger(Lambda.class).info("Bi-Consumer: {}, {}", msg1, msg2);
 
     public static final BiFunction<Integer, Integer, Integer> multiply =  // accept(T,U):R
-            (x, y) -> x * y;
+            (x, y) -> x * y; //return: implicit
 
     public static final BiPredicate<String, String> compare =  // apply(T,U):R
-            String::equals;
+            String::equals; //return: implicit
 }
