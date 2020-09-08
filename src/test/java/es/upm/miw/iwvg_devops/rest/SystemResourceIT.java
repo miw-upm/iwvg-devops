@@ -10,7 +10,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-import static es.upm.miw.iwvg_devops.rest.SystemResource.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -19,13 +18,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @AutoConfigureWebTestClient
 @TestPropertySource(locations = "classpath:test.properties")
 class SystemResourceIT {
+
     @Autowired
     private WebTestClient webTestClient;
 
     @Test
     void testReadBadge() {
         this.webTestClient
-                .get().uri(SYSTEM + VERSION_BADGE)
+                .get().uri(SystemResource.SYSTEM + SystemResource.VERSION_BADGE)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(byte[].class)
@@ -36,7 +36,7 @@ class SystemResourceIT {
     @Test
     void testReadInfo() {
         this.webTestClient
-                .get().uri(SYSTEM + APP_INFO)
+                .get().uri(SystemResource.SYSTEM + SystemResource.APP_INFO)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(String.class)

@@ -39,38 +39,38 @@
 
 ### :page_with_curl: IWVG. Devops. Enunciado de la práctica
 
-#### 1. Crear un proyecto
+#### 1. Crear un proyecto (**0.5 pto**)
 Crear un proyecto Maven llamado: **iwvg-devops-nombre-apellido**, versión **1.0.0**. Para ello se aporta **zip** de la plantilla.
 > Recordar editar el pom y cambiar el nombre del artefacto (artifactId).   
 > Recordar cambiar el nombre de la  carpeta.   
 > Importarlo desde IntelliJ.   
 > Crear un repositorio en GitHub.   
 
-#### 2. Preparar la gestión mediante Scrum
+#### 2. Preparar la gestión mediante Scrum (**0.5 pto**)
 > Crear un proyecto de gestión en GitHub y prepararlo para la metodología de Scrum (columnas, etiquetas, hitos...).   
 
-#### 3. Sprint 1. Preparación del ecosistema
+#### 3. Sprint 1. Preparación del ecosistema (**2 ptos**)
 Se crearán las siguientes 4 historias (**Issues**) pero se trabajarán en las ramas **develop** & **master**.
-* :one: Integración continua con **Travis-CI**. Incluir **Badge** en README con **link** a la cuenta de Travis-CI.
-* :two: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
-* :three: Análisis del código con **Better Code Hub**. Incluir **Badge** en README.
-* :four: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **Swagger-ui.html**.
+* :one: Integración con Slack. Incluir captura de pantalla en la carpeta docs del proyecto
+* :two: Integración continua con **Travis-CI**. Incluir **Badge** en README con **link** a la cuenta de Travis-CI.
+* :three: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
+* :four: Análisis del código con **Better Code Hub**. Incluir **Badge** en README.
+* :five: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **swagger-ui.html**.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues.
 
-#### 4. Release
+#### 4. Release (**0.5 pto**)
 > Realizar la primera liberación del código (_**v.1.0.0-release**_)
 
-#### 5. Sprint 2. Preparación del software a desarrollar
+#### 5. Sprint 2. Preparación del software a desarrollar (**2 ptos**)
 Se crearán las siguientes 4 historias (**Issues**).
 * Clases :one:**Fraction** & :five:**FractionTest**.
 * Clases :two:**User** & :three:**UserTest**.
 * Clases :four:**UsersDatabase**.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**. Las clases Point, User, DecimalCollection, Fraction se podrán copiar de las dadas en clase.
 
-#### 6. Release
 > Realizar la segunda liberación del código (_**v.1.1.0-release**_)
 
-#### 7. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**Issues**) por cada búsqueda, con el test correspondiente.
+#### 6. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**Issues**) por cada búsqueda, con el test correspondiente (**3 ptos**).
 
 * `0` Stream&lt;String> findUserFamilyNameInitialByAnyProperFraction();
 * `1` Stream&lt;String> findUserIdByAnyProperFraction();
@@ -89,22 +89,20 @@ Se crearán las siguientes 4 historias (**Issues**).
 * `e` Fraction findFractionAdditionByUserId(String id);
 * `f` Fraction findFirstFractionSubtractionByUserName(String name);
 
-#### 8. Release
 > Realizar la tercera liberación del código (_**v.1.2.0-release**_)
 
-#### 9. Bug
+#### 7. Bug (**1.5 ptos**)
 > Suponer que la búsqueda 3 anterior no es buena y se debe proceder a modificarla. Realizar un cambio y proceder a la cuarta liberación del código (_**v.1.2.1-release**_).
+
+### :white_check_mark: Criterios transversales **con pérdida de puntos por falta de calidad**
+* Uso correcto del flujo de trabajo ramificado. **Hasta -3 ptos**. 
+* Adecuación de la temporalidad de desarrollo según el enunciado. **Hasta -3 ptos**. 
+* Mantenimiento de calidad del código según Travis-CI, Sonar, Better Code Hub. Cobertura >= 80%. **Hasta -2 ptos**. 
+* Gestión adecuada, completa y equlibrada (estimación, tiempo real...) durante el desarrollo. **Hasta -2 ptos**. 
+* Commits correctos y completos. **Hasta -2 ptos**. 
+* Código limpio, bien formateado y ordenado. **Hasta -2 ptos**. 
+
 
 ### :clap: Entraga de la práctica
 Indicar como texto en la subida la **URL de GitHub**
 > **NOTA. Acordarse de dar al botón de envío**
-
-### :ballot_box_with_check: Criterios de evaluación (ver rúbrica)
-* Completud y corrección de lo entregado respecto al enunciado.
-* Adecuación de la temporalidad de desarrollo según el enunciado.
-* Mantenimiento de calidad del código según Travis-CI, Sonar, Better Code Hub.
-* Uso correcto del flujo de trabajo ramificado.
-* Commits correctos y completos.
-* Gestión adecuada y completa (estimación, tiempo real...) durante el desarrollo.
-* Planificación temporal adecuada y equilibrada en el desarrollo.
-* Código limpio, bien formateado y ordenado.

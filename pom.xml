@@ -59,7 +59,7 @@
         <!-- coverage report -->
         <jacoco.version>0.8.5</jacoco.version>
         <!-- OpenAPI -->
-        <springdoc-openapi-webflux-ui.version>1.3.9</springdoc-openapi-webflux-ui.version>
+        <springdoc-openapi-webflux-ui.version>1.4.6</springdoc-openapi-webflux-ui.version>
     </properties>
 
     <dependencies>
