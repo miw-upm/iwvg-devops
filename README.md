@@ -38,6 +38,7 @@
 ### :dvd: [Plantilla de la práctica en _docs/template-webflux.zip_](docs/template-webflux.zip)
 
 ### :page_with_curl: IWVG. Devops. Enunciado de la práctica
+> Todo el software deberá estar en ingles.
 
 #### 1. Crear un proyecto (**0.5 pto**)
 Crear un proyecto Maven llamado: **iwvg-devops-nombre-apellido**, versión **1.0.0**. Para ello se aporta **zip** de la plantilla.
@@ -50,12 +51,12 @@ Crear un proyecto Maven llamado: **iwvg-devops-nombre-apellido**, versión **1.0
 > Crear un proyecto de gestión en GitHub y prepararlo para la metodología de Scrum (columnas, etiquetas, hitos...).   
 
 #### 3. Sprint 1. Preparación del ecosistema (**2 ptos**)
-Se crearán las siguientes 4 historias (**Issues**) pero se trabajarán en las ramas **develop** & **master**.
-* :one: Integración con Slack. Incluir captura de pantalla en la carpeta docs del proyecto
-* :two: Integración continua con **Travis-CI**. Incluir **Badge** en README con **link** a la cuenta de Travis-CI.
-* :three: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
-* :four: Análisis del código con **Better Code Hub**. Incluir **Badge** en README.
-* :five: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **swagger-ui.html**.
+Se crearán las siguientes 4 o 5 historias (**Issues**) pero se trabajarán en las ramas **develop** & **master**.
+* :one: Integración continua con **Travis-CI**. Incluir **Badge** en README con **link** a la cuenta de Travis-CI.
+* :two: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
+* :three: Análisis del código con **Better Code Hub**. Incluir **Badge** en README.
+* :four: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **swagger-ui.html**.
+* **Opcional** :five: Integración con Slack. Incluir captura de pantalla en la carpeta docs del proyecto
 > :one:, :two:... representa el orden temporal de desarrollo de los issues.
 
 #### 4. Release (**0.5 pto**)
@@ -66,7 +67,8 @@ Se crearán las siguientes 4 historias (**Issues**).
 * Clases :one:**Fraction** & :five:**FractionTest**.
 * Clases :two:**User** & :three:**UserTest**.
 * Clases :four:**UsersDatabase**.
-> :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**. Las clases Point, User, DecimalCollection, Fraction se podrán copiar de las dadas en clase.
+* Ampliación :six:**Fraction** & :seven:**FractionTest** con las funcionalidades: **isProper, isImproper, isEquivalent, add, multiply & divide**.
+> :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**. Las clases User, Fraction y UsersDatabase se podrán copiar de las dadas en clase.
 
 > Realizar la segunda liberación del código (_**v.1.1.0-release**_)
 
@@ -101,6 +103,7 @@ Se crearán las siguientes 4 historias (**Issues**).
 * Gestión adecuada, completa y equlibrada (estimación, tiempo real...) durante el desarrollo. **Hasta -2 ptos**. 
 * Commits correctos y completos. **Hasta -2 ptos**. 
 * Código limpio, bien formateado y ordenado. **Hasta -2 ptos**. 
+* Uso del ingles. **Hasta -1 pto**.
 
 
 ### :clap: Entraga de la práctica
