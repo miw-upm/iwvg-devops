@@ -77,7 +77,7 @@ Se crearán las siguientes 4 historias (**Issues**).
 * `0` Stream&lt;String> findUserFamilyNameInitialByAnyProperFraction();
 * `1` Stream&lt;String> findUserIdByAnyProperFraction();
 * `2` Fraction findFractionMultiplicationByUserFamilyName(String familyName);
-* `3` Fraction findFirstFractionDivisionByUserId(String id);
+* `3` Fraction findFractionDivisionByUserId(String id);
 * `4` Double findFirstDecimalFractionByUserName(String name);
 * `5` Stream&lt;String> findUserIdByAllProperFraction();
 * `6` Stream&lt;Double> findDecimalImproperFractionByUserName(String name);
