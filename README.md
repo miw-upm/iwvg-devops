@@ -74,22 +74,22 @@ Se crearán las siguientes 4 historias (**Issues**).
 
 #### 6. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**Issues**) por cada búsqueda, con el test correspondiente (**3 ptos**).
 
-* `0` Stream&lt;String> findUserFamilyNameInitialByAnyProperFraction();
-* `1` Stream&lt;String> findUserIdByAnyProperFraction();
+* `0` Stream&lt;String> findUserFamilyNameInitialBySomeProperFraction();
+* `1` Stream&lt;String> findUserIdBySomeProperFraction();
 * `2` Fraction findFractionMultiplicationByUserFamilyName(String familyName);
 * `3` Fraction findFractionDivisionByUserId(String id);
 * `4` Double findFirstDecimalFractionByUserName(String name);
 * `5` Stream&lt;String> findUserIdByAllProperFraction();
 * `6` Stream&lt;Double> findDecimalImproperFractionByUserName(String name);
 * `7` Fraction findFirstProperFractionByUserId(String id);
-* `8` Stream&lt;String> findUserFamilyNameByImproperFraction();
+* `8` Stream&lt;String> findUserFamilyNameBySomeImproperFraction();
 * `9` Fraction findHighestFraction();
-* `a` Stream&lt;String> findUserNameByAnyImproperFraction();
+* `a` Stream&lt;String> findUserNameBySomeImproperFraction();
 * `b` Stream&lt;String> findUserFamilyNameByAllNegativeSignFractionDistinct();
 * `c` Stream&lt;Double> findDecimalFractionByUserName(String name);
 * `d` Stream&lt;Double> findDecimalFractionByNegativeSignFraction();
 * `e` Fraction findFractionAdditionByUserId(String id);
-* `f` Fraction findFirstFractionSubtractionByUserName(String name);
+* `f` Fraction findFractionSubtractionByUserName(String name);
 
 > Realizar la tercera liberación del código (_**v.1.2.0-release**_)
 
