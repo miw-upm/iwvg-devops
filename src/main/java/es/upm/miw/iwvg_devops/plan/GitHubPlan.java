@@ -15,6 +15,8 @@ import static org.springframework.web.reactive.function.client.ExchangeFilterFun
 @Service
 public class GitHubPlan {
 
+    private static final String EXCEPTION_MSG = "Unexpected error: ";
+
     private WebClient.Builder webClientBuilder;
 
     @Autowired
@@ -28,10 +30,10 @@ public class GitHubPlan {
                 .uri("https://api.github.com/repos/miw-upm/iwvg-devops/labels")
                 .exchange()
                 .onErrorResume(exception ->
-                        Mono.error(new RuntimeException("Unexpected error: " + exception.getMessage())))
+                        Mono.error(new RuntimeException(EXCEPTION_MSG + exception.getMessage())))
                 .flatMap(response -> {
                     if (response.statusCode().isError()) {
-                        return Mono.error(new RuntimeException("Unexpected error: " + response.statusCode()));
+                        return Mono.error(new RuntimeException(EXCEPTION_MSG + response.statusCode()));
                     } else {
                         return response.bodyToMono(Label[].class);
                     }
@@ -51,10 +53,10 @@ public class GitHubPlan {
                 .uri("https://api.github.com/repos/" + owner + "/" + repo + "/labels/" + labelName)
                 .exchange()
                 .onErrorResume(exception ->
-                        Mono.error(new RuntimeException("Unexpected error: " + exception.getMessage())))
+                        Mono.error(new RuntimeException(EXCEPTION_MSG + exception.getMessage())))
                 .flatMap(response -> {
                     if (response.statusCode().isError()) {
-                        return Mono.error(new RuntimeException("Unexpected error: " + response.statusCode()));
+                        return Mono.error(new RuntimeException(EXCEPTION_MSG + response.statusCode()));
                     } else {
                         return response.bodyToMono(Object.class);
                     }
@@ -70,15 +72,16 @@ public class GitHubPlan {
                 .body(BodyInserters.fromValue(label))
                 .exchange()
                 .onErrorResume(exception ->
-                        Mono.error(new RuntimeException("Unexpected error: " + exception.getMessage())))
+                        Mono.error(new RuntimeException(EXCEPTION_MSG + exception.getMessage())))
                 .flatMap(response -> {
                     if (response.statusCode().isError()) {
-                        return Mono.error(new RuntimeException("Unexpected error: " + response.statusCode()));
+                        return Mono.error(new RuntimeException(EXCEPTION_MSG + response.statusCode()));
                     } else {
                         return response.bodyToMono(Object.class);
                     }
                 })
                 .block();
     }
+
 }
 

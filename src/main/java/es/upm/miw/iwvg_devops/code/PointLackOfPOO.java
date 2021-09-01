@@ -21,11 +21,11 @@ public class PointLackOfPOO {
         this.y = xy;
     }
 
-    public double module(int x, int Y) {
+    public double module(int x, int y) {
         return Math.sqrt((double) x * x + y * y);
     }
 
-    public double phase(int x, int Y) {
+    public double phase(int x, int y) {
         return Math.atan((double) y / x);
     }
 

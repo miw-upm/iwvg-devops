@@ -32,6 +32,15 @@ public class Label {
         this.color = color;
     }
 
+    public Label() {
+    }
+
+    public Label(String name, String description, String color) {
+        this.name = name;
+        this.description = description;
+        this.color = color;
+    }
+
     @Override
     public String toString() {
         return "Label{" +

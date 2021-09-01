@@ -51,7 +51,7 @@ class FlowTest {
 
     @Test
     void testFilterPositive() {
-        Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
+        Stream< Integer > stream = Stream.of(-2, 1, 0, -3, 3);
         assertEquals(Arrays.asList(1, 0, 3), new Flow().filterPositives(stream).collect(Collectors.toList()));
     }
 
@@ -62,14 +62,14 @@ class FlowTest {
 
     @Test
     void testSize() {
-        Stream<Integer> stream = Stream.of(0, 1);
+        Stream< Integer > stream = Stream.of(0, 1);
         assertEquals(2, new Flow().size(stream));
         //ERROR: new Flow().size(stream); IllegalStateException: stream has already been operated upon or closed
     }
 
     @Test
     void testRemoveCopy() {
-        Stream<Integer> stream = Stream.of(0, 1, 0, 2, 2, 0);
+        Stream< Integer > stream = Stream.of(0, 1, 0, 2, 2, 0);
         assertEquals(Arrays.asList(0, 1, 2), new Flow().removeCopy(stream).collect(Collectors.toList()));
     }
 
@@ -93,7 +93,7 @@ class FlowTest {
         Integer[] array1 = new Integer[]{0, 1};
         Integer[] array2 = new Integer[]{0, 3};
         Integer[] array3 = new Integer[]{2, 5};
-        Stream<Integer> stream = new Flow().flatten(Stream.of(array1, array2, array3));
+        Stream< Integer > stream = new Flow().flatten(Stream.of(array1, array2, array3));
         assertEquals(Arrays.asList(0, 1, 0, 3, 2, 5), stream.collect(Collectors.toList()));
     }
 
@@ -109,7 +109,7 @@ class FlowTest {
 
     @Test
     void testMul() {
-        Stream<Integer> stream = Stream.iterate(1, n -> n + 1).limit(5);
+        Stream< Integer > stream = Stream.iterate(1, n -> n + 1).limit(5);
         assertEquals(120, new Flow().mul(stream));
     }
 
@@ -120,32 +120,31 @@ class FlowTest {
 
     @Test
     void testTerminal() {
-        new Flow().terminal(Stream.of(-2, 1, 0, -3, 3));
+        assertDoesNotThrow(() -> new Flow().terminal(Stream.of(-2, 1, 0, -3, 3)));
     }
 
     @Test
     void testIsValueContent() {
-        Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
+        Stream< Integer > stream = Stream.of(-2, 1, 0, -3, 3);
         assertTrue(new Flow().isValueContent(stream, -3));
     }
 
     @Test
     void testIsValueContentNotExist() {
-        Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
+        Stream< Integer > stream = Stream.of(-2, 1, 0, -3, 3);
         assertFalse(new Flow().isValueContent(stream, 4));
     }
 
     @Test
     void testAreAllPositive() {
-        Stream<Integer> stream = Stream.of(1, 0, 3);
+        Stream< Integer > stream = Stream.of(1, 0, 3);
         assertTrue(new Flow().areAllPositive(stream));
     }
 
     @Test
     void testAreAllPositiveExistNegative() {
-        Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
+        Stream< Integer > stream = Stream.of(-2, 1, 0, -3, 3);
         assertFalse(new Flow().areAllPositive(stream));
     }
-
 
 }

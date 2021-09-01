@@ -60,7 +60,7 @@ public class Flow {
     }
 
     public Stream<String> debug(Stream<String> stream) {
-        return stream.peek(LogManager.getLogger(this.getClass())::info);
+        return stream.peek(LogManager.getLogger(this.getClass())::debug);
     }
 
     public Stream<String> mapToString(Stream<Integer> stream) {

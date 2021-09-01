@@ -7,14 +7,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class LambdaTest {
 
     @Test
     void testConsumers() {
-        Stream.of("one", "two", "three").forEach(Lambda.logInfo);
-        Stream.of("one", "two", "three").forEach(Lambda.logInfoDetail);
+        assertDoesNotThrow(() -> Stream.of("one", "two", "three").forEach(Lambda.logInfo));
+        assertDoesNotThrow(() -> Stream.of("one", "two", "three").forEach(Lambda.logInfoDetail));
     }
 
     @Test
