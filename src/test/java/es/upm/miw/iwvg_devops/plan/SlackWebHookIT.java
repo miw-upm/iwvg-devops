@@ -1,6 +1,5 @@
 package es.upm.miw.iwvg_devops.plan;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +15,7 @@ class SlackWebHookIT {
     private SlackWebHook slackWebHook;
 
 
-    @Test
+    //@Test
     void testCopyLabels() {
         this.slackWebHook.publish(new Message("Hola, desde spring!!"));
     }

@@ -8,7 +8,8 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class SlackWebHook {
-    private static final String SLACK_URL = "https://hooks.slack.com/services/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";
+    private static final String
+            SLACK_URL = "https://hooks.slack.com/services/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"; //invalid
     private WebClient.Builder webClientBuilder;
 
     @Autowired
