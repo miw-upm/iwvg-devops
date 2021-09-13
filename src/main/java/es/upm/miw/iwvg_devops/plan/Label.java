@@ -8,6 +8,15 @@ public class Label {
 
     private String color;
 
+    public Label() {
+    }
+
+    public Label(String name, String description, String color) {
+        this.name = name;
+        this.description = description;
+        this.color = color;
+    }
+
     public String getName() {
         return name;
     }
@@ -29,15 +38,6 @@ public class Label {
     }
 
     public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Label() {
-    }
-
-    public Label(String name, String description, String color) {
-        this.name = name;
-        this.description = description;
         this.color = color;
     }
 
