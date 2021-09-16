@@ -56,7 +56,7 @@ Se crearán las siguientes 5 historias (**Issues**) pero se trabajarán en las r
 * :two: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
 * :three: Análisis del código con **Better Code Hub**. Incluir **Badge** en README.
 * :four: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **swagger-ui.html**.
-* :five: Integración con Slack. Incluir captura de pantalla en la carpeta docs del proyecto
+* :five: Integración con Slack.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues.
 
 #### 4. Release (**0.5 pto**)
