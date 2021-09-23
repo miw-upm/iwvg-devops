@@ -20,19 +20,20 @@ class GitHubPlanIT {
     //@Test
     void testCopyLabels() {
         String owner = "miw-upm";
-        String password = "m1w.2011";
-        List< Label > labels = this.gitHubServices.readLabels();
-        labels.forEach(
-                label -> {
-                    this.gitHubServices.deleteLabel(label.getName(), owner, password, "betca-tpv");
-                    this.gitHubServices.createLabel(label, owner, "txtDeDocencia", "betca-tpv");
-                }
-        );
+        String token = "kkk"; //Account>>settings>>Developer settings>>Personal access tokens
+        String origin = "iwvg-devops";
+        String repo = "apaw-practice";
+        this.gitHubServices.deleteAllLabels(owner, token, repo);
+        List<Label> labels = this.gitHubServices.readLabels(origin);
+        labels.forEach(label -> this.gitHubServices.createLabel(label, owner, token, repo));
     }
 
     //@Test
     void testCreateStoryLabels() {
-        List< Label > labels = List.of(
+        String owner = "miw-upm";
+        String token = "kkk"; //Account>>settings>>Developer settings>>Personal access tokens
+        String repo = "betca-tpv";
+        List<Label> labels = List.of(
                 new Label("story: articles-family-crud", "Articles Family CRUD", "666666"),
                 new Label("story: articles-family-view", "Articles Family View", "666666"),
                 new Label("story: articles-sizes-family-creator", "Articles Sizes Family Creator", "666666"),
@@ -69,11 +70,10 @@ class GitHubPlanIT {
                 new Label("story: e34", "Order", "666666")
 
         );
-        String owner = "miw-upm";
         labels.forEach(
                 label -> {
-                    this.gitHubServices.deleteLabel(label.getName(), owner, "791c01c4d8ddb6201db83fda066a085f8e8cc3e0", "betca-tpv");
-                    this.gitHubServices.createLabel(label, owner, "791c01c4d8ddb6201db83fda066a085f8e8cc3e0", "betca-tpv");
+                    this.gitHubServices.deleteLabel(label.getName(), owner, token, repo);
+                    this.gitHubServices.createLabel(label, owner, token, repo);
                 }
         );
     }

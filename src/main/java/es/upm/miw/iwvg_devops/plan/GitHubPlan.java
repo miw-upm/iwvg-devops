@@ -24,10 +24,10 @@ public class GitHubPlan {
         this.webClientBuilder = webClientBuilder;
     }
 
-    public List<Label> readLabels() {
+    public List<Label> readLabels(String repo) {
         Label[] res = webClientBuilder.build()
                 .get()
-                .uri("https://api.github.com/repos/miw-upm/iwvg-devops/labels")
+                .uri("https://api.github.com/repos/miw-upm/" + repo + "/labels")
                 .exchange()
                 .onErrorResume(exception ->
                         Mono.error(new RuntimeException(EXCEPTION_MSG + exception.getMessage())))
@@ -44,6 +44,11 @@ public class GitHubPlan {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public void deleteAllLabels(String owner, String password, String repo) {
+        List<Label> labels = this.readLabels(repo);
+        labels.forEach(label -> this.deleteLabel(label.getName(), owner, password, repo));
     }
 
     public void deleteLabel(String labelName, String owner, String password, String repo) {

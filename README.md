@@ -98,9 +98,9 @@ Se crearán las siguientes 4 historias (**Issues**).
 
 ### :white_check_mark: Criterios transversales **con pérdida de puntos por falta de calidad**
 * Uso correcto del flujo de trabajo ramificado. **Hasta -3 ptos**. 
-* Adecuación de la temporalidad de desarrollo según el enunciado. **Hasta -3 ptos**. 
-* Mantenimiento de calidad del código según Travis-CI, Sonar, Better Code Hub. Cobertura >= 80%. **Hasta -2 ptos**. 
-* Gestión adecuada, completa y equlibrada (estimación, tiempo real...) durante el desarrollo. **Hasta -2 ptos**. 
+* Adecuación de la temporalidad de desarrollo según el enunciado. **Hasta -3 ptos**.
+* Mantenimiento de calidad del código según GitHub Actions, Sonar, Better Code Hub. Cobertura >= 80%. **Hasta -2 ptos**.
+* Gestión adecuada, completa y equlibrada (estimación, tiempo real...) durante el desarrollo. **Hasta -2 ptos**.
 * Commits correctos y completos. **Hasta -2 ptos**. 
 * Código limpio, bien formateado y ordenado. **Hasta -2 ptos**. 
 * Uso del ingles. **Hasta -1 pto**.
