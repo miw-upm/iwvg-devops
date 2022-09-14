@@ -41,7 +41,8 @@
 > Todo el software deberá estar en ingles.
 
 #### 1. Crear un proyecto (**0.5 pto**)
-Crear un proyecto Maven llamado: **iwvg-devops-apellido-nombre**, versión **2.0.0**. Para ello se aporta **zip** de la plantilla.
+Crear un proyecto Maven llamado: **iwvg-devops-apellido-nombre**, versión **3.0.0**. Para ello se aporta **zip** de la
+plantilla.
 > Recordar editar el pom y cambiar el nombre del artefacto (artifactId).   
 > Recordar cambiar el nombre de la  carpeta.   
 > Importarlo desde IntelliJ.   
@@ -56,7 +57,7 @@ Se crearán las siguientes 5 historias (**Issues**) pero se trabajarán en las r
 * :two: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
 * :three: Análisis del código con **Better Code Hub**. Incluir **Badge** en README.
 * :four: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **swagger-ui.html**.
-* :five: Integración con Slack.
+* :five: Integración con **Slack**.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues.
 
 #### 4. Release (**0.5 pto**)
