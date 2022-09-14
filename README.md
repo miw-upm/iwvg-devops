@@ -16,7 +16,7 @@
 [![Heroku broken](https://iwvg-devops.herokuapp.com/system/version-badge)](https://iwvg-devops.herokuapp.com/swagger-ui.html)
 
 ### Tecnologías necesarias
-`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Better Code Hub` `Slack` `Spring-boot` `Heroku` `OpenAPI`
+`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `Heroku` `OpenAPI`
 
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:
@@ -46,7 +46,7 @@ Crear un proyecto Maven llamado: **iwvg-devops-apellido-nombre**, versión **2.0
 > Recordar cambiar el nombre de la  carpeta.   
 > Importarlo desde IntelliJ.   
 > Crear un repositorio en GitHub con el mensaje del primer comit: "Initial. Nombre Apellido"   
-
+ 
 #### 2. Preparar la gestión mediante Scrum (**0.5 pto**)
 > Crear un proyecto de gestión en GitHub y prepararlo para la metodología de Scrum (columnas, etiquetas, hitos...).   
 
