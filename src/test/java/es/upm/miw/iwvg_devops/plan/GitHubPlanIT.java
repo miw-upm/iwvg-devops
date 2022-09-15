@@ -1,6 +1,5 @@
 package es.upm.miw.iwvg_devops.plan;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,12 +17,12 @@ class GitHubPlanIT {
     private GitHubPlan gitHubServices;
 
 
-    @Test
+   // @Test
     void testCopyLabels() {
         String owner = "miw-upm";
         String token = "kkk"; //Account>>settings>>Developer settings>>Personal access tokens
         String origin = "iwvg-devops";
-        String repo = "devops-demo";
+        String repo = "iwvg-devops-bernal-jesus";
         this.gitHubServices.deleteAllLabels(owner, token, repo);
         List<Label> labels = this.gitHubServices.readLabels(origin);
         labels.forEach(label -> this.gitHubServices.createLabel(label, owner, token, repo));
