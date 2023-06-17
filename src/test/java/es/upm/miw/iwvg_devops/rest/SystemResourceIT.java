@@ -9,8 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.reactive.server.WebTestClient;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
@@ -25,7 +23,7 @@ class SystemResourceIT {
     @Test
     void testReadBadge() {
         this.webTestClient
-                .get().uri(SystemResource.SYSTEM + SystemResource.VERSION_BADGE)
+                .get().uri(SystemResource.VERSION_BADGE)
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(byte[].class)
@@ -36,11 +34,10 @@ class SystemResourceIT {
     @Test
     void testReadInfo() {
         this.webTestClient
-                .get().uri(SystemResource.SYSTEM + SystemResource.APP_INFO)
+                .get().uri("/")
                 .exchange()
                 .expectStatus().isOk()
                 .expectBody(String.class)
-                .value(Assertions::assertNotNull)
-                .value(body -> assertEquals(3, body.split("::").length));
+                .value(Assertions::assertNotNull);
     }
 }

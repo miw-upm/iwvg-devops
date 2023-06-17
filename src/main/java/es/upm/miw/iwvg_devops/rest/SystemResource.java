@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(SystemResource.SYSTEM)
+@RequestMapping("/")
 public class SystemResource {
-    static final String SYSTEM = "/system";
 
-    static final String APP_INFO = "/app-info";
     static final String VERSION_BADGE = "/version-badge";
 
     @Value("${application.name}")
@@ -20,14 +18,20 @@ public class SystemResource {
     @Value("${build.timestamp}")
     private String buildTimestamp;
 
+    @GetMapping
+    public String applicationInfo() {
+        String appInfo="{\"version\":\"" + this.applicationName + "::" +
+                this.buildVersion + "::" + this.buildTimestamp + "\"} <br> <br>";
+        appInfo += "/version-badge <br><br>";
+        appInfo += "/actuator/info <br> /actuator/health <br><br>";
+        appInfo += "/swagger-ui.html  <br> /v3/api-docs <br>";
+        return appInfo;
+    }
+
     @GetMapping(value = VERSION_BADGE, produces = {"image/svg+xml"})
-    public byte[] generateBadge() { // http://localhost:8080/system/badge
+    public byte[] generateBadge() {
         return new Badge().generateBadge("Heroku", "v" + buildVersion).getBytes();
     }
 
-    @GetMapping(value = APP_INFO)
-    public String applicationInfo() {
-        return "{\"version\":\"" + this.applicationName + "::" +
-                this.buildVersion + "::" + this.buildTimestamp + "\"}";
-    }
+
 }
