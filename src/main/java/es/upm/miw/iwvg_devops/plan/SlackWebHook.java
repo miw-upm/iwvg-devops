@@ -22,9 +22,10 @@ public class SlackWebHook {
                 .post()
                 .uri(SLACK_URL)
                 .body(BodyInserters.fromValue(message))
-                .exchange()
-                .onErrorResume(exception ->
-                        Mono.error(new RuntimeException("Unexpected error: " + exception.getMessage())))
+                .retrieve()
+                .bodyToMono(String.class)
+                .onErrorMap(exception ->
+                        new RuntimeException("Unexpected error: " + exception.getMessage()))
                 .block(); // reactive programming to synchronous programming
     }
 

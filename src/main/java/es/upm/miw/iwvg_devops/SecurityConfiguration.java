@@ -16,9 +16,6 @@ public class SecurityConfiguration {
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) {
         return http
-                .formLogin().disable()
-                .csrf().disable()
-                .logout().disable()
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
                 .build();
     }
