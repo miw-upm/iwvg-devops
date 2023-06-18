@@ -9,5 +9,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
       - name: Deploy to Railway
-        run: |
-          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.RAILWAY_TOKEN }}" -d '{}' https://railway.app/api/v1/deploys
+        run: railway up
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
