@@ -10,7 +10,4 @@ jobs:
         uses: actions/checkout@v2
       - name: Deploy to Railway
         run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -H "Authorization: Bearer ${{ secrets.RAILWAY_TOKEN }}" \
-          -d '{}' \
-          https://railway.app/api/v1/deploys
+          curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer ${{ secrets.RAILWAY_TOKEN }}" -d '{}' https://railway.app/api/v1/deploys
