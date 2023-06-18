@@ -14,5 +14,3 @@ jobs:
           -H "Authorization: Bearer ${{ secrets.RAILWAY_TOKEN }}" \
           -d '{}' \
           https://railway.app/api/v1/deploys
-          
-          
