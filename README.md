@@ -12,11 +12,10 @@
 ### Estado del código
 [![DevOps](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-sonar.yml)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops)
-[![BCH compliance](https://bettercodehub.com/edge/badge/miw-upm/iwvg-devops?branch=develop)](https://bettercodehub.com/results/miw-upm/iwvg-devops)
 [![Heroku broken](https://iwvg-devops.herokuapp.com/system/version-badge)](https://iwvg-devops.herokuapp.com/swagger-ui.html)
 
 ### Tecnologías necesarias
-`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `Heroku` `OpenAPI`
+`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `Railway` `OpenAPI`
 
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:

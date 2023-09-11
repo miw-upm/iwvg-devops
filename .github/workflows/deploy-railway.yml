@@ -1,7 +1,7 @@
 name: Deploy to Railway
 on:
   push:
-    branches: [master]
+    branches: [master1]
 jobs:
   deploy:
     runs-on: ubuntu-latest
