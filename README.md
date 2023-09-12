@@ -12,7 +12,6 @@
 ### Estado del código
 [![DevOps](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-sonar.yml)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops)
-[![Heroku broken](https://iwvg-devops.herokuapp.com/system/version-badge)](https://iwvg-devops.herokuapp.com/swagger-ui.html)
 
 ### Tecnologías necesarias
 `Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `Railway` `OpenAPI`
@@ -40,7 +39,7 @@
 > Todo el software deberá estar en ingles.
 
 #### 1. Crear un proyecto (**0.5 pto**)
-Crear un proyecto Maven llamado: **iwvg-devops-apellido-nombre**, versión **3.0.0**. Para ello se aporta **zip** de la
+Crear un proyecto Maven llamado: **iwvg-devops-apellido-nombre**, versión **4.0.0**. Para ello se aporta **zip** de la
 plantilla.
 > Recordar editar el pom y cambiar el nombre del artefacto (artifactId).   
 > Recordar cambiar el nombre de la  carpeta.   
@@ -51,15 +50,14 @@ plantilla.
 > Crear un proyecto de gestión en GitHub y prepararlo para la metodología de Scrum (columnas, etiquetas, hitos...).   
 
 #### 3. Sprint 1. Preparación del ecosistema (**1.5 ptos**)
-Se crearán las siguientes 4 historias (**Issues**) pero se trabajarán en las ramas **develop** & **master**.
+Se crearán las siguientes 2 historias (**Issues**) pero se trabajarán en las ramas **develop** & **master**.
 
 * :one: Integración continua con **GitHub Actions**. Incluir **Badge** en README con **link**.
 * :two: Análisis del código con **Sonarcloud**. Incluir **Badge** en README con **link** a la cuenta de Sonar.
-* :three: Desplegar en **Heroku**. Incluir **Badge** en README con **link** a la página de **swagger-ui.html**.
 > :one:, :two:... representa el orden temporal de desarrollo de los issues.
 
 #### 4. Release (**0.5 pto**)
-> Realizar la primera liberación del código (_**v.3.0.0-release**_)
+> Realizar la primera liberación del código (_**v.4.0.0-release**_)
 
 #### 5. Sprint 2. Preparación del software a desarrollar (**2 ptos**)
 Se crearán las siguientes 4 historias (**Issues**).
@@ -70,7 +68,7 @@ Se crearán las siguientes 4 historias (**Issues**).
 
 > :one:, :two:... representa el orden temporal de desarrollo de los issues. Cuando un issue se termine se debe incorporar a la rama **develop**. Las clases User, Fraction y UsersDatabase se podrán copiar de las dadas en clase.
 
-> Realizar la segunda liberación del código (_**v.3.1.0-release**_)
+> Realizar la segunda liberación del código (_**v.4.1.0-release**_)
 
 #### 6. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**
 Issues**) por cada búsqueda, con el test correspondiente (**3.5 ptos**).
@@ -92,10 +90,10 @@ Issues**) por cada búsqueda, con el test correspondiente (**3.5 ptos**).
 * `e` Fraction findFractionAdditionByUserId(String id);
 * `f` Fraction findFractionSubtractionByUserName(String name);
 
-> Realizar la tercera liberación del código (_**v.3.2.0-release**_)
+> Realizar la tercera liberación del código (_**v.4.2.0-release**_)
 
 #### 7. Bug (**1.5 ptos**)
-> Suponer que la búsqueda 3 anterior no es buena y se debe proceder a modificarla. Realizar un cambio y proceder a la cuarta liberación del código (_**v.3.2.1-release**_).
+> Suponer que la búsqueda 3 anterior no es buena y se debe proceder a modificarla. Realizar un cambio y proceder a la cuarta liberación del código (_**v.4.2.1-release**_).
 
 ### :white_check_mark: Criterios transversales **con pérdida de puntos por falta de calidad**
 * Uso correcto del flujo de trabajo ramificado. **Hasta -3 ptos**. 

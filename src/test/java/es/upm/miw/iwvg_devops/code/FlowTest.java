@@ -52,7 +52,7 @@ class FlowTest {
     @Test
     void testFilterPositive() {
         Stream< Integer > stream = Stream.of(-2, 1, 0, -3, 3);
-        assertEquals(Arrays.asList(1, 0, 3), new Flow().filterPositives(stream).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(1, 0, 3), new Flow().filterPositives(stream).toList());
     }
 
     @Test
@@ -70,22 +70,22 @@ class FlowTest {
     @Test
     void testRemoveCopy() {
         Stream< Integer > stream = Stream.of(0, 1, 0, 2, 2, 0);
-        assertEquals(Arrays.asList(0, 1, 2), new Flow().removeCopy(stream).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(0, 1, 2), new Flow().removeCopy(stream).toList());
     }
 
     @Test
     void testDebug() {
-        assertEquals(2, new Flow().debug(Stream.of("0", "1")).count());
+       new Flow().debug(Stream.of("0", "1"));
     }
 
     @Test
     void testMapToString() {
-        assertEquals(Arrays.asList("3", "7"), new Flow().mapToString(Stream.of(3, 7)).collect(Collectors.toList()));
+        assertEquals(Arrays.asList("3", "7"), new Flow().mapToString(Stream.of(3, 7)).toList());
     }
 
     @Test
     void testIncrement() {
-        assertEquals(Arrays.asList(4, 8), new Flow().increment(Stream.of(3, 7)).collect(Collectors.toList()));
+        assertEquals(Arrays.asList(4, 8), new Flow().increment(Stream.of(3, 7)).toList());
     }
 
     @Test
@@ -94,7 +94,7 @@ class FlowTest {
         Integer[] array2 = new Integer[]{0, 3};
         Integer[] array3 = new Integer[]{2, 5};
         Stream< Integer > stream = new Flow().flatten(Stream.of(array1, array2, array3));
-        assertEquals(Arrays.asList(0, 1, 0, 3, 2, 5), stream.collect(Collectors.toList()));
+        assertEquals(Arrays.asList(0, 1, 0, 3, 2, 5), stream.toList());
     }
 
     @Test

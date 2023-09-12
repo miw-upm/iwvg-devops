@@ -2,6 +2,7 @@ package es.upm.miw.iwvg_devops.code;
 
 import org.apache.logging.log4j.LogManager;
 
+import java.util.Objects;
 import java.util.stream.Stream;
 
 public class Searches {
@@ -15,11 +16,9 @@ public class Searches {
 
     public Stream<Integer> findFractionNumeratorByUserFamilyName(String userFamilyName) {
         return new UsersDatabase().findAll()
-                .peek(x -> LogManager.getLogger(this.getClass()).info("before: " + x))
                 .filter(user -> userFamilyName.equals(user.getFamilyName()))
-                .peek(x -> LogManager.getLogger(this.getClass()).info("after: " + x))
                 .flatMap(user -> user.getFractions().stream()
-                        .filter(i -> null != i)
+                        .filter(Objects::nonNull)
                 )
                 .map(Fraction::getNumerator);
     }

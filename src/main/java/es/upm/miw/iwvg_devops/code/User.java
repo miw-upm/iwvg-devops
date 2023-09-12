@@ -4,13 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-
     private String id;
-
     private String name;
-
     private String familyName;
-
     private List<Fraction> fractions;
 
     public User() {
