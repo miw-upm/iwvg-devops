@@ -1,9 +1,7 @@
 package es.upm.miw.iwvg_devops.code;
 
 public class PointLackOfPOO {
-
     private int x;
-
     private int y;
 
     public PointLackOfPOO(int x, int y) {
