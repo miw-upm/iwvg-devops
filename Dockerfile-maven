@@ -4,7 +4,7 @@ VOLUME /root/.m2
 CMD ["/bin/bash"]
 
 # ------------------------------------- COMANDOS ----------------------------------------------------------
-# Construir la imagemn
+# Construir la imagen, ATENCION!!! existe un punto al final que se debe incluir
 #> docker build -f Dockerfile-maven -t maven-cli .
 
 # Se queda de forma interactiva esperando comandos maven: mvn clean package, mvn verify..., exit para salir
