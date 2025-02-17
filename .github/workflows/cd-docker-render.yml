@@ -1,4 +1,4 @@
-name: CD
+name: CD - GitHub Docker Packages & Render
 on:
   push:
     branches:
@@ -51,7 +51,7 @@ jobs:
         run: |
           docker push $PACKAGE_PATH:$VERSION
           docker push $PACKAGE_PATH:latest
-      - name: Deploy on Render
+#      - name: Deploy on Render
         # En Render, en el servicio Web, Settings >> Deploy Hook >>  copiar el token de acceso
         # En GitHub, en el repositorio, Settings >> Secrets and variables >> Actions >> definir la variable de entorno
         # DEPLOY_HOOK_TOKEN con el token

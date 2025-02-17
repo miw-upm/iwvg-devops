@@ -1,4 +1,4 @@
-name: Deploy to Railway
+name: CD - Railway
 on:
   push:
     branches: [master1]
