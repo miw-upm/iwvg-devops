@@ -30,7 +30,7 @@ public class SystemResource {
 
     @GetMapping(value = VERSION_BADGE, produces = {"image/svg+xml"})
     public byte[] generateBadge() {
-        return new Badge().generateBadge("Heroku", "v" + buildVersion).getBytes();
+        return new Badge().generateBadge("Render", "v" + buildVersion).getBytes();
     }
 
 

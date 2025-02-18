@@ -11,6 +11,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
 
+
   postgres:
     image: postgres:15.10
     container_name: postgres-server
@@ -50,7 +51,7 @@ volumes:
 
 
 # Construir todas las BD
-#> docker-compose -f docker-compose-db.yml -p databases up -d
+#> docker compose -f docker-compose-db.yml -p databases up -d
 
 # CONSOLA & COMANDOS MySQL
 #> docker exec -it mysql-server mysql -u root -p

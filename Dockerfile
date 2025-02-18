@@ -20,6 +20,17 @@ WORKDIR /app
    # Copia el archivo *jar generado en el contenedor de construcción
 COPY --from=build /app/target/*.jar app.jar
    # Este contenedor escucha el puerto indicado
-EXPOSE 10000
+EXPOSE 8080
    # Define un comando para cuando se inicialice el contenedor en el host: java -jar app.jar
 CMD ["java", "-jar", "app.jar"]
+
+
+# ------------------------------------- COMANDOS ----------------------------------------------------------
+# Construir la imagen, ATENCION!!! existe un punto al final que se debe incluir
+#> docker build -t devops .
+
+# Crea y arrancar el contenedor a partir de la imagen
+#> docker run -d --name devops-app  -p 8080:8080 devops
+
+# Arranca el contenedor
+#> docker start devops-app
