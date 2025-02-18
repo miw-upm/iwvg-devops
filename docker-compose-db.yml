@@ -1,0 +1,92 @@
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: mysql-server
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devops
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  postgres:
+    image: postgres:15.10
+    container_name: postgres-server
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: devops
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongodb/mongodb-community-server:5.0.4-ubuntu2004
+    container_name: mongo-server
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongo
+      MONGO_INITDB_ROOT_PASSWORD: mongo
+      MONGO_INITDB_DATABASE: devops
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+
+volumes:
+  mysql_data:
+    name: "mysql-data"
+  postgres_data:
+    name: "postgres-data"
+  mongo_data:
+    name: "mongo-data"
+  mongo_config:
+    name: "mongo-config"
+
+
+# Construir todas las BD
+#> docker-compose -f docker-compose-db.yml -p databases up -d
+
+# CONSOLA & COMANDOS MySQL
+#> docker exec -it mysql-server mysql -u root -p
+#  show databases;
+#  create database poo;
+#  drop database poo;
+#  use poo;
+#  show tables;
+#  describe mytable;
+#  select * from mytable;
+#  drop table mytable;
+#  exit
+
+# CONSOLA & COMANDOS Postgres
+#> docker exec -it postgres-server  psql -U postgres
+#  \?   Help
+#  \l   Database list
+#  \connect <db> <usr>
+#  \dt   Table list
+#  \d <table> ;  describe
+#  \q   exit
+#  create database <db>;
+#  drop database <db>;
+#  select * from <table>;
+#  delete from <table>;
+
+# CONSOLA & COMANDOS mongo
+#>x docker exec -it mongo-server mongosh "mongodb://mongo:mongo@localhost:27017/devops?authSource=admin"
+#  help
+#  db.version()
+#  db.stats()
+#  show databases
+#  use <myBD>
+#  show collections
+#  db.dropDatabase()
+#  db.coll1.drop()
+#  db.coll1.find()
+#  db.coll1.find().pretty()
+#  db.coll1.count()
