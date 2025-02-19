@@ -16,6 +16,7 @@ public class SecurityConfiguration {
     @Bean
     public SecurityWebFilterChain securityFilterChain(ServerHttpSecurity http) {
         return http
+                .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
                 .build();
     }
