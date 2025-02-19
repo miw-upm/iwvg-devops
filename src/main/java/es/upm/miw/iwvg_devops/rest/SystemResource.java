@@ -11,17 +11,16 @@ public class SystemResource {
 
     static final String VERSION_BADGE = "/version-badge";
 
-    @Value("${application.name}")
-    private String applicationName;
-    @Value("${build.version}")
-    private String buildVersion;
-    @Value("${build.timestamp}")
-    private String buildTimestamp;
+    @Value("${info.app.artifact}")
+    private String artifact;
+    @Value("${info.app.version}")
+    private String version;
+    @Value("${info.app.build}")
+    private String build;
 
     @GetMapping
     public String applicationInfo() {
-        String appInfo="{\"version\":\"" + this.applicationName + "::" +
-                this.buildVersion + "::" + this.buildTimestamp + "\"} <br> <br>";
+        String appInfo="{\"version\":\"" + this.artifact + "::" + this.version + "::" + this.build + "\"} <br> <br>";
         appInfo += "/version-badge <br><br>";
         appInfo += "/actuator/info <br> /actuator/health <br><br>";
         appInfo += "/swagger-ui.html  <br> /v3/api-docs <br>";
@@ -30,7 +29,7 @@ public class SystemResource {
 
     @GetMapping(value = VERSION_BADGE, produces = {"image/svg+xml"})
     public byte[] generateBadge() {
-        return new Badge().generateBadge("Render", "v" + buildVersion).getBytes();
+        return new Badge().generateBadge("Render", "v" + version).getBytes();
     }
 
 
