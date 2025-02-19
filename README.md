@@ -15,7 +15,7 @@
 
 
 ### Tecnologías necesarias
-`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `Railway` `OpenAPI`
+`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `GitHub Packages` `Docker` `OpenAPI`
 
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:
@@ -30,9 +30,6 @@
 
 ### :book: Diapositivas
 * [Diapositivas de DevOps](docs/miw-iwvg-devops-slides.pdf)   
-
-### :movie_camera: Videos (www.youtube.com/miw-upm)
-* Lista de reproducción: **IWVG. Devops**
 
 ### :dvd: [Plantilla de la práctica en _docs/template-webflux.zip_](docs/template-webflux.zip)
 
