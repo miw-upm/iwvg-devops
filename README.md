@@ -10,12 +10,13 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed/miw-upm/iwvg-devops?color=informational)
 
 ### Estado del código
-[![DevOps](https://github.com/miw-upm/iwvg-devops/actions/workflows/ci.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/ci.yml)
+[![DevOps](https://github.com/miw-upm/iwvg-devops/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/continuous-integration.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=es.upm.miw%3Aiwvg-devops)
+[![Render broken](https://iwvg-devops-latest.onrender.com/version-badge)](https://iwvg-devops-latest.onrender.com/swagger-ui.html)
 
 
 ### Tecnologías necesarias
-`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `GitHub Packages` `Docker` `OpenAPI`
+`Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-Boot` `GitHub Packages` `Docker` `OpenAPI`
 
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:
@@ -23,10 +24,16 @@
 > cd <folder path>
 > git clone https://github.com/miw-upm/iwvg-devops
 ```
-2. Importar el proyecto mediante **IntelliJ IDEA**
-   1. **Import Project**, y seleccionar la carpeta del proyecto.
-   1. Marcar **Create Project from external model**, elegir **Maven**.
-   1. **Next** … **Finish**.
+2. Importar el proyecto mediante **IntelliJ IDEA**  
+   * **Open**, y seleccionar la carpeta del proyecto.
+
+### :gear: Ejecución en local
+* Ejecutar en el proyecto la siguiente secuencia de comandos de Docker ( :warning: **incluir el punto final** ):
+```sh
+> docker build -t devops .
+> docker run -d --name devops-app  -p 8080:8080 devops
+```
+* Cliente Web: `http://localhost:8080`
 
 ### :book: Diapositivas
 * [Diapositivas de DevOps](docs/miw-iwvg-devops-slides.pdf)   

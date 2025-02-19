@@ -79,7 +79,7 @@ volumes:
 #  delete from <table>;
 
 # CONSOLA & COMANDOS mongo
-#>x docker exec -it mongo-server mongosh "mongodb://mongo:mongo@localhost:27017/devops?authSource=admin"
+#> docker exec -it mongo-server mongosh "mongodb://mongo:mongo@localhost:27017/devops?authSource=admin"
 #  help
 #  db.version()
 #  db.stats()
