@@ -22,7 +22,7 @@ jobs:
         # PACKAGE_PATH: ruta de los paquetes de destino
         # VERSION: versión sacado del fichero POM
         run: |
-          echo "REGISTRY = ghcr.io" >> $GITHUB_ENV
+          echo "REGISTRY=ghcr.io" >> $GITHUB_ENV
           echo "REPOSITORY=${{ github.repository }}" >> $GITHUB_ENV
           echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
       - name: Show NAMES
@@ -33,14 +33,14 @@ jobs:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v3
         with:
-          registry: $REGISTRY #GitHub Container Registry
+          registry: ${{ env.REGISTRY }} #GitHub Container Registry
           username: ${{ github.actor }}  # Utiliza el contexto para obtener el nombre del autor
           # 1º Creación del Token de Acceso Personal
           #    Cuenta de GitHub >> Developer settings >> Personal access tokens >> Tokens >> Generate new token
           #    write:packages & read:packages delete:packages & repo
           # 2º Configuración de Secrets en GitHub
           #    repositorio en GitHub >> settings >> secrets and variables >> actions >> new repository secret
-          password: ${{ secrets.GITHUB_CONTAINER_REGISTRY_PERSONAL_ACCESS_TOKEN }}
+          password: ${{ secrets.GHCR_PERSONAL_ACCESS_TOKEN }}
       - name: Build and Tag and Push Docker image
         # docker build se construye la imagen de docker a partir del fichero Dockerfile
         # docker tag: se etiqueta la imagen con la versión actual y se establece que es la última
