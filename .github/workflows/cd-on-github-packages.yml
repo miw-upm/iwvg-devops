@@ -28,7 +28,7 @@ jobs:
           username: ${{ github.actor }}
           # 1º Creación del Token de Acceso Personal
           #    Cuenta de GitHub >> Developer settings >> Personal access tokens >> Tokens >> Generate new token
-          #    write:packages & read:packages delete:packages & repo
+          #    write:packages & read:packages & delete:packages & repo
           # 2º Configuración de Secrets en GitHub
           #    repositorio en GitHub >> settings >> secrets and variables >> actions >> new repository secret
           password: ${{ secrets.GHCR_PERSONAL_ACCESS_TOKEN }}

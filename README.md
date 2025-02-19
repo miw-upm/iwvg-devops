@@ -11,7 +11,8 @@
 
 ### Estado del código
 [![DevOps](https://github.com/miw-upm/iwvg-devops/actions/workflows/ci.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/ci.yml)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=sqale_rating)]([cd-docker-render.yml](../betca-tpv-core/.github/workflows/cd-docker-render.yml)https://sonarcloud.io/dashboard?id=es.upm.miw%3Aiwvg-devops)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=es.upm.miw%3Aiwvg-devops&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=es.upm.miw%3Aiwvg-devops)
+
 
 ### Tecnologías necesarias
 `Java` `Maven` `GitHub` `GitHub Actions` `Sonarcloud` `Slack` `Spring-boot` `Railway` `OpenAPI`
