@@ -38,7 +38,7 @@
 ### :book: Diapositivas
 * [Diapositivas de DevOps](docs/miw-iwvg-devops-slides.pdf)   
 
-### :dvd: [Plantilla de la práctica en _docs/template-webflux.zip_](docs/template-webflux.zip)
+### :dvd: [Plantilla de la práctica en _docs/template-webflux.zip_](docs/template-webflux-3.4.zip)
 
 ### :page_with_curl: IWVG. Devops. Enunciado de la práctica
 > Todo el software deberá estar en ingles.
