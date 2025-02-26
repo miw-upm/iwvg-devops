@@ -21,7 +21,7 @@ jobs:
           java-version: 21
           cache: maven
 
-      - name: Build & Unit & IT
+      - name: Build & Unit & IT & FT
         run: mvn -B clean verify
 
       - name: Notify Slack on failure

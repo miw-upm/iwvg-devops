@@ -5,10 +5,11 @@ services:
     working_dir: /app
     volumes:
       - .:/app
-      - maven-cache:/root/.m2
+      - maven_cache:/root/.m2
     command: ["/bin/bash"]
     stdin_open: true
     tty: true
 
 volumes:
   maven_cache:
+    name: "maven-cache"

@@ -17,7 +17,7 @@ import static org.springframework.http.HttpStatus.OK;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
-class SystemResourceFT {
+class SystemResourceFunctionalTest {
 
     @LocalServerPort
     private int port;

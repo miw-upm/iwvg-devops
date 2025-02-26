@@ -1,4 +1,4 @@
-package es.upm.miw.devops.rest.http_errors;
+package es.upm.miw.devops.rest.exceptionshandler;
 
 public class ErrorMessage {
 
