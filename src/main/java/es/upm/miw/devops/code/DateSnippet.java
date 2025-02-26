@@ -11,12 +11,12 @@ import java.util.Locale;
 
 import static java.time.temporal.TemporalAdjusters.firstDayOfMonth;
 
-public class Dates {
+public class DateSnippet {
     public static void main(String[] args) {
-        new Dates().createDate();
-        new Dates().createTime();
-        new Dates().createDateTime();
-        new Dates().instant();
+        new DateSnippet().createDate();
+        new DateSnippet().createTime();
+        new DateSnippet().createDateTime();
+        new DateSnippet().instant();
     }
 
     public void createDate() {
