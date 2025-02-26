@@ -7,15 +7,15 @@ import java.util.function.*;
 
 public class Lambda {
 
-    public static final Consumer< String > logInfo = // accept(T)
+    public static final Consumer<String> logInfo = // accept(T)
             LogManager.getLogger(Lambda.class)::info;  // item ->: implicit
-    public static final Consumer< String > logInfoDetail = // accept(T)
+    public static final Consumer<String> logInfoDetail = // accept(T)
             msg -> LogManager.getLogger(Lambda.class).info("Consumer: {}", msg);
-    public static final Function< String, Integer > convertToInt = // apply(T):R
+    public static final Function<String, Integer> convertToInt = // apply(T):R
             Integer::parseInt; // item -> & return: implicit
-    public static final Function< String, Integer > convertToIntPlus1 = // apply(T):R
+    public static final Function<String, Integer> convertToIntPlus1 = // apply(T):R
             value -> Integer.parseInt(value) + 1; //return: implicit
-    public static final Function< String, Integer > convertToIntZeroTo1 = // apply(T):R
+    public static final Function<String, Integer> convertToIntZeroTo1 = // apply(T):R
             value -> {
                 if ("0".equals(value)) {
                     return 1;
