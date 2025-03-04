@@ -31,7 +31,7 @@
 * Ejecutar en el proyecto la siguiente secuencia de comandos de Docker ( :warning: **incluir el punto final** ):
 ```sh
 > docker build -t devops .
-> docker run -d --name devops-app  -p 8080:8080 devops
+> docker run -d --name de[.gitignore](../spring-api-rest/.gitignore)vops-app  -p 8080:8080 devops
 ```
 * Cliente Web: `http://localhost:8080`
 
