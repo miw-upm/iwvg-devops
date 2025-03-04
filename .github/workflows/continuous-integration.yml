@@ -27,6 +27,6 @@ jobs:
           -Dsonar.projectKey=es.upm.miw:iwvg-devops 
           -Dsonar.organization=miw-upm-github 
           -Dsonar.host.url=https://sonarcloud.io 
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
 
 
