@@ -21,17 +21,9 @@ jobs:
           java-version: 21
           cache: maven
 
-      - name: Build & Unit & IT & FT
-        run: mvn -B clean verify
-
-      - name: Sonar
-        if: success() # always() failure() success()
-        uses: SonarSource/sonarcloud-github-action@v2
-        with:
-          args: >
-            -Dsonar.projectKey=es.upm.miw:iwvg-devops
-            -Dsonar.organization=miw-upm-github
-            -Dsonar.host.url=https://sonarcloud.io
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build & Unit & IT & FT & Sonar Analysis
+        run: mvn -B clean verify sonar:sonar \
+            -Dsonar.projectKey=es.upm.miw:iwvg-devops \
+            -Dsonar.organization=miw-upm-github \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
