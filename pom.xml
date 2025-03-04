@@ -53,6 +53,8 @@
         <maven-failsafe-plugin.version>3.5.2</maven-failsafe-plugin.version>
         <!-- coverage report -->
         <jacoco.version>0.8.12</jacoco.version>
+        <!-- Plugin de Sonar oficial -->
+        <sonar-maven-plugin-version>4.0.0.4121</sonar-maven-plugin-version>
         <!-- OpenAPI -->
         <springdoc-openapi-starter-webmvc-ui.version>2.8.4</springdoc-openapi-starter-webmvc-ui.version>
     </properties>
@@ -110,12 +112,12 @@
                 </executions>
             </plugin>
             <!-- coverage report -->
-            <!-- Plugin de Sonar en su ubicación oficial -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
-                <version>4.0.0.4121</version>
+                <version>${sonar-maven-plugin-version}</version>
             </plugin>
+            <!-- coverage report -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
