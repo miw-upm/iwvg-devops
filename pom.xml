@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.4.2</version>
+        <version>3.4.4</version>
         <relativePath/>
     </parent>
 
@@ -176,7 +176,7 @@
                         </goals>
                         <configuration>
                             <includes>
-                                <include>**/*FunctionalTest.java</include>
+                                <include>**/*FT.java</include>
                             </includes>
                         </configuration>
                     </execution>
