@@ -24,6 +24,10 @@ jobs:
           java-version: 21
           cache: maven
 
+      - name: Extract version from pom.xml
+        id: get-version
+        run: echo "ARTIFACT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)" >> $GITHUB_ENV
+
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
@@ -40,8 +44,8 @@ jobs:
 
       - name: Sonar Analysis
         run: >
-          mvn -B clean sonar:sonar 
-          -Dsonar.projectKey=es.upm.miw:iwvg-devops 
+          mvn -B sonar:sonar 
+          -Dsonar.projectKey=miw-upm-github_${{ env.ARTIFACT }}
           -Dsonar.organization=miw-upm-github 
           -Dsonar.host.url=https://sonarcloud.io 
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
