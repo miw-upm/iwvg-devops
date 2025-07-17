@@ -54,7 +54,7 @@
         <!-- coverage report -->
         <jacoco.version>0.8.12</jacoco.version>
         <!-- Official Plugin Sonar -->
-        <sonar-maven-plugin-version>5.0.0.4389</sonar-maven-plugin-version>
+        <sonar-maven-plugin-version>5.1.0.4751</sonar-maven-plugin-version>
         <!-- OpenAPI -->
         <springdoc-openapi-starter-webmvc-ui.version>2.8.9</springdoc-openapi-starter-webmvc-ui.version>
     </properties>
