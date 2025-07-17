@@ -3,7 +3,8 @@ package es.upm.miw.devops.code;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.BDDAssertions.within;
 
 class DecimalCollectionTest {
     private DecimalCollection decimalCollection;
@@ -19,38 +20,45 @@ class DecimalCollectionTest {
 
     @Test
     void testDecimalCollection() {
-        this.decimalCollection = new DecimalCollection();
-        assertEquals(0, this.decimalCollection.size());
+        DecimalCollection emptyCollection = new DecimalCollection();
+        assertThat(emptyCollection.size())
+                .isZero();
     }
 
     @Test
     void testAdd() {
-        assertEquals(4, this.decimalCollection.size());
+        assertThat(this.decimalCollection.size())
+                .isEqualTo(4);
     }
 
     @Test
     void testSum() {
-        assertEquals(6.0, this.decimalCollection.sum(), 10e-5);
+        assertThat(this.decimalCollection.sum())
+                .isCloseTo(6.0, within(1e-5));
     }
 
     @Test
     void testSumEvenValues() {
-        assertEquals(4.0, this.decimalCollection.sumEvenValues(), 10e-5);
+        assertThat(this.decimalCollection.sumEvenValues())
+                .isCloseTo(4.0, within(1e-5));
     }
 
     @Test
     void testSumIfEmpty() {
-        assertEquals(Double.NaN, new DecimalCollection().sum(), 10e-5);
+        assertThat(new DecimalCollection().sum())
+                .isNaN();
     }
 
     @Test
     void testMax() {
-        assertEquals(3.0, this.decimalCollection.max(), 10e-5);
+        assertThat(this.decimalCollection.max())
+                .isCloseTo(3.0, within(1e-5));
     }
 
     @Test
     void testMaxIfEmpty() {
-        assertEquals(Double.NaN, new DecimalCollection().max(), 10e-5);
+        assertThat(new DecimalCollection().max())
+                .isNaN();
     }
 
 }

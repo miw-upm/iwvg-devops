@@ -3,7 +3,8 @@ package es.upm.miw.devops.code;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
 class PointTest {
     private Point point;
@@ -15,46 +16,54 @@ class PointTest {
 
     @Test
     void testPointIntInt() {
-        assertEquals(2, point.getX());
-        assertEquals(3, point.getY());
+        assertThat(point.getX()).isEqualTo(2);
+        assertThat(point.getY()).isEqualTo(3);
     }
 
     @Test
     void testPointInt() {
         point = new Point(2);
-        assertEquals(2, point.getX());
-        assertEquals(2, point.getY());
+        assertThat(point.getX()).isEqualTo(2);
+        assertThat(point.getY()).isEqualTo(2);
     }
 
     @Test
     void testPoint() {
         point = new Point();
-        assertEquals(0, point.getX());
-        assertEquals(0, point.getY());
+        assertThat(point.getX())
+                .isZero();
+        assertThat(point.getY())
+                .isZero();
     }
 
     @Test
     void testModule() {
-        assertEquals(3.6055, point.module(), 10e-5);
+        assertThat(point.module())
+                .isCloseTo(3.6055, within(1e-5));
     }
 
     @Test
     void testPhase() {
-        assertEquals(0.9828, point.phase(), 10e-5);
+        assertThat(point.phase())
+                .isCloseTo(0.9828, within(1e-5));
     }
 
     @Test
     void testTranslateXOrigin() {
         this.point.translateXOrigin(1);
-        assertEquals(1, point.getX());
-        assertEquals(3, point.getY());
+        assertThat(point.getX())
+                .isEqualTo(1);
+        assertThat(point.getY())
+                .isEqualTo(3);
     }
 
     @Test
     void testTranslateOrigin() {
         this.point.translateOrigin(new Point(1, 1));
-        assertEquals(1, point.getX());
-        assertEquals(2, point.getY());
+        assertThat(point.getX())
+                .isEqualTo(1);
+        assertThat(point.getY())
+                .isEqualTo(2);
     }
 
 }

@@ -3,7 +3,8 @@ package es.upm.miw.devops.code;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.BDDAssertions.within;
 
 class DecimalCollectionWithStreamTest {
     private DecimalCollectionWithStream decimalCollectionWithStream;
@@ -19,39 +20,45 @@ class DecimalCollectionWithStreamTest {
 
     @Test
     void testDecimalCollection() {
-        this.decimalCollectionWithStream = new DecimalCollectionWithStream();
-        assertEquals(0, this.decimalCollectionWithStream.size());
+        DecimalCollection emptyCollection = new DecimalCollection();
+        assertThat(emptyCollection.size())
+                .isZero();
     }
 
     @Test
     void testAdd() {
-        assertEquals(4, this.decimalCollectionWithStream.size());
+        assertThat(this.decimalCollectionWithStream.size())
+                .isEqualTo(4);
     }
 
     @Test
     void testSum() {
-        assertEquals(6.0, this.decimalCollectionWithStream.sum(), 10e-5);
+        assertThat(this.decimalCollectionWithStream.sum())
+                .isCloseTo(6.0, within(1e-5));
     }
 
     @Test
     void testSumEvenValues() {
-        assertEquals(4.0, this.decimalCollectionWithStream.sumEvenValues(), 10e-5);
+        assertThat(this.decimalCollectionWithStream.sumEvenValues())
+                .isCloseTo(4.0, within(1e-5));
     }
 
     @Test
     void testSumIfEmpty() {
-        assertEquals(Double.NaN, new DecimalCollectionWithStream().sum(), 10e-5);
+        assertThat(new DecimalCollectionWithStream().sum())
+                .isNaN();
     }
 
     @Test
     void testMax() {
-        assertEquals(3.0, this.decimalCollectionWithStream.max(), 10e-5);
+        assertThat(this.decimalCollectionWithStream.max())
+                .isCloseTo(3.0, within(1e-5));
     }
 
     @Test
     void testMaxIfEmpty() {
-        assertEquals(Double.NaN, new DecimalCollectionWithStream().max(), 10e-5);
-
+        assertThat(new DecimalCollectionWithStream().max())
+                .isNaN();
     }
 }
 

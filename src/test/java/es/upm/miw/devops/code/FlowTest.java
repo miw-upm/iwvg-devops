@@ -1,149 +1,168 @@
 package es.upm.miw.devops.code;
 
-import org.apache.logging.log4j.LogManager;
+
+
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 class FlowTest {
 
     @Test
     void testStreamFromList() {
-        assertEquals(3, new Flow().streamFromList().count());
+        assertThat(new Flow().streamFromList().count())
+                .isEqualTo(3);
     }
 
     @Test
     void testStreamFromRange() {
-        assertEquals(4, new Flow().streamFromRange().count()); //0..3
+        assertThat(new Flow().streamFromRange().count())
+                .isEqualTo(4); // 0..3
     }
 
     @Test
     void testStreamFromOf() {
-        assertEquals(3, new Flow().streamFromOf().count());
+        assertThat(new Flow().streamFromOf().count())
+                .isEqualTo(3);
     }
 
     @Test
     void testStreamFromGenerate() {
-        assertEquals(7, new Flow().streamFromGenerate(7).count());
+        assertThat(new Flow().streamFromGenerate(7).count())
+                .isEqualTo(7);
     }
 
     @Test
     void testStreamFromIterate() {
-        assertEquals(7, new Flow().streamFromIterate(7)
-                .peek(LogManager.getLogger(this.getClass())::info)
-                .count()
-        );
+        assertThat(new Flow().streamFromIterate(7).count())
+                .isEqualTo(7);
     }
 
     @Test
     void testToList() {
-        assertEquals(Arrays.asList(-3, 4, 0, -2, 5), new Flow().toList(Stream.of(-3, 4, 0, -2, 5)));
+        assertThat(new Flow().toList(Stream.of(-3, 4, 0, -2, 5)))
+                .containsExactly(-3, 4, 0, -2, 5);
     }
 
     @Test
     void testToArray() {
-        assertArrayEquals(new Integer[]{0, 1}, new Flow().toArray(Stream.of(0, 1)));
+        assertThat(new Flow().toArray(Stream.of(0, 1)))
+                .containsExactly(0, 1);
     }
 
     @Test
     void testFilterPositive() {
         Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
-        assertEquals(Arrays.asList(1, 0, 3), new Flow().filterPositives(stream).toList());
+        assertThat(new Flow().filterPositives(stream).toList())
+                .containsExactly(1, 0, 3);
     }
 
     @Test
     void testSkipFirst() {
-        assertEquals(1, new Flow().skipFirst(Stream.of(0, 1)).count());
+        assertThat(new Flow().skipFirst(Stream.of(0, 1)).count())
+                .isEqualTo(1);
     }
 
     @Test
-    void testSize() {
+    void shouldCalculateSize() {
         Stream<Integer> stream = Stream.of(0, 1);
-        assertEquals(2, new Flow().size(stream));
-        //ERROR: new Flow().size(stream); IllegalStateException: stream has already been operated upon or closed
+        assertThat(new Flow().size(stream))
+                .isEqualTo(2);
     }
 
     @Test
-    void testRemoveCopy() {
+    void testRemoveDuplicates() {
         Stream<Integer> stream = Stream.of(0, 1, 0, 2, 2, 0);
-        assertEquals(Arrays.asList(0, 1, 2), new Flow().removeCopy(stream).toList());
+        assertThat(new Flow().removeCopy(stream).toList())
+                .containsExactly(0, 1, 2);
     }
 
     @Test
-    void testDebug() {
-        new Flow().debug(Stream.of("0", "1"));
+    void shouldNotThrowOnDebug() {
+        // This test just runs without exception, no assertions needed
+        assertThatCode(() -> new Flow().debug(Stream.of("0", "1")))
+                .doesNotThrowAnyException();
     }
 
     @Test
     void testMapToString() {
-        assertEquals(Arrays.asList("3", "7"), new Flow().mapToString(Stream.of(3, 7)).toList());
+        assertThat(new Flow().mapToString(Stream.of(3, 7)).toList())
+                .containsExactly("3", "7");
     }
 
     @Test
     void testIncrement() {
-        assertEquals(Arrays.asList(4, 8), new Flow().increment(Stream.of(3, 7)).toList());
+        assertThat(new Flow().increment(Stream.of(3, 7)).toList())
+                .containsExactly(4, 8);
     }
 
     @Test
     void testFlatten() {
-        Integer[] array1 = new Integer[]{0, 1};
-        Integer[] array2 = new Integer[]{0, 3};
-        Integer[] array3 = new Integer[]{2, 5};
-        Stream<Integer> stream = new Flow().flatten(Stream.of(array1, array2, array3));
-        assertEquals(Arrays.asList(0, 1, 0, 3, 2, 5), stream.toList());
+        Integer[] array1 = {0, 1};
+        Integer[] array2 = {0, 3};
+        Integer[] array3 = {2, 5};
+        assertThat(new Flow().flatten(Stream.of(array1, array2, array3)).toList())
+                .containsExactly(0, 1, 0, 3, 2, 5);
     }
 
     @Test
     void testSum() {
-        assertEquals(4, new Flow().sum(Stream.of(-3, 4, 0, -2, 5)));
+        assertThat(new Flow().sum(Stream.of(-3, 4, 0, -2, 5)))
+                .isEqualTo(4);
     }
 
     @Test
     void testMax() {
-        assertEquals(5, new Flow().max(Stream.of(-3, 4, 0, -2, 5)));
+        assertThat(new Flow().max(Stream.of(-3, 4, 0, -2, 5)))
+                .isEqualTo(5);
     }
 
     @Test
     void testMul() {
         Stream<Integer> stream = Stream.iterate(1, n -> n + 1).limit(5);
-        assertEquals(120, new Flow().mul(stream));
+        assertThat(new Flow().mul(stream))
+                .isEqualTo(120);
     }
 
     @Test
     void testIncrementAndSum() {
-        assertEquals(12.0, new Flow().incrementAndSum(Stream.of(3, 7)), 10 - 5);
+        assertThat(new Flow().incrementAndSum(Stream.of(3, 7)))
+                .isCloseTo(12.0, within(1e-5));
     }
 
     @Test
     void testTerminal() {
-        assertDoesNotThrow(() -> new Flow().terminal(Stream.of(-2, 1, 0, -3, 3)));
+        assertThatCode(() -> new Flow().terminal(Stream.of(-2, 1, 0, -3, 3)))
+                .doesNotThrowAnyException();
     }
 
     @Test
     void testIsValueContent() {
         Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
-        assertTrue(new Flow().isValueContent(stream, -3));
+        assertThat(new Flow().isValueContent(stream, -3))
+                .isTrue();
     }
 
     @Test
     void testIsValueContentNotExist() {
         Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
-        assertFalse(new Flow().isValueContent(stream, 4));
+        assertThat(new Flow().isValueContent(stream, 4))
+                .isFalse();
     }
 
     @Test
     void testAreAllPositive() {
         Stream<Integer> stream = Stream.of(1, 0, 3);
-        assertTrue(new Flow().areAllPositive(stream));
+        assertThat(new Flow().areAllPositive(stream))
+                .isTrue();
     }
 
     @Test
     void testAreAllPositiveExistNegative() {
         Stream<Integer> stream = Stream.of(-2, 1, 0, -3, 3);
-        assertFalse(new Flow().areAllPositive(stream));
+        assertThat(new Flow().areAllPositive(stream))
+                .isFalse();
     }
-
 }

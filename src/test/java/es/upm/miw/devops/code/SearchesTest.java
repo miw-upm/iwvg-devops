@@ -2,29 +2,26 @@ package es.upm.miw.devops.code;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class SearchesTest {
 
     @Test
     void testFindUserFamilyNameByUserNameDistinct() {
-        assertEquals(List.of("Torres"), new Searches().findUserFamilyNameByUserNameDistinct("Paula")
-                .collect(Collectors.toList()));
+        assertThat(new Searches().findUserFamilyNameByUserNameDistinct("Paula").toList())
+                .containsExactly("Torres");
     }
 
     @Test
     void testFindUserFractionNumeratorByFamilyName() {
-        assertEquals(List.of(2, 4, 0, 1, 1), new Searches().findFractionNumeratorByUserFamilyName("Torres")
-                .collect(Collectors.toList()));
+        assertThat(new Searches().findFractionNumeratorByUserFamilyName("Torres").toList())
+                .containsExactly(2, 4, 0, 1, 1);
     }
 
     @Test
     void testFindFamilyNameByFractionDenominator() {
-        assertEquals(List.of("López", "Torres"), new Searches().findUserFamilyNameByFractionDenominator(2)
-                .collect(Collectors.toList()));
+        assertThat(new Searches().findUserFamilyNameByFractionDenominator(2).toList())
+                .containsExactly("López", "Torres");
     }
 
     void testFindUserIdByAnyProperFraction() {
