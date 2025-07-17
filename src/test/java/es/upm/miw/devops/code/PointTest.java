@@ -39,13 +39,13 @@ class PointTest {
     @Test
     void testModule() {
         assertThat(point.module())
-                .isCloseTo(3.6055, within(1e-5));
+                .isCloseTo(3.60555, within(1e-5));
     }
 
     @Test
     void testPhase() {
         assertThat(point.phase())
-                .isCloseTo(0.9828, within(1e-5));
+                .isCloseTo(0.98279, within(1e-5));
     }
 
     @Test
