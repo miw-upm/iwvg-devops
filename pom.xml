@@ -52,7 +52,7 @@
         <maven-surefire-plugin.version>3.5.3</maven-surefire-plugin.version>
         <maven-failsafe-plugin.version>3.5.3</maven-failsafe-plugin.version>
         <!-- coverage report -->
-        <jacoco.version>0.8.12</jacoco.version>
+        <jacoco.version>0.8.13</jacoco.version>
         <!-- Official Plugin Sonar -->
         <sonar-maven-plugin-version>5.1.0.4751</sonar-maven-plugin-version>
         <!-- OpenAPI -->
