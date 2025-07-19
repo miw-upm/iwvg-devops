@@ -27,12 +27,26 @@
 2. Importar el proyecto mediante **IntelliJ IDEA**  
    * **Open**, y seleccionar la carpeta del proyecto.
 
-### :gear: Ejecución en local
-* Ejecutar en el proyecto la siguiente secuencia de comandos de Docker ( :warning: **incluir el punto final** ):
+### :gear: Ejecución en local con IntelliJ
+* Ejecutar la clase **Application** con IntelliJ
+
+### :gear: Ejecución en local con Docker
+* Crear la red, solo una vez:
+```sh
+> docker network create devopsNet
+```
+
+* Comandos docker: ejecutar los comandos de Docker ( :warning: **incluir el punto final** ):
 ```sh
 > docker build -t devops .
 > docker run -d --name de[.gitignore](../spring-api-rest/.gitignore)vops-app  -p 8080:8080 devops
 ```
+
+* Comandos docker compose:
+```sh
+> docker compose up --build -d
+```
+
 * Cliente Web: `http://localhost:8080`
 
 ### :book: Diapositivas
