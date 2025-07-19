@@ -6,11 +6,13 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: devops
+      MYSQL_DATABASE: devopsDb
     ports:
       - "3306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    networks:
+      - devopsNet
 
   postgres:
     image: postgres:15.10
@@ -19,25 +21,29 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: devops
+      POSTGRES_DB: devopsDb
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - devopsNet
 
   mongo:
-    image: mongodb/mongodb-community-server:5.0.4-ubuntu2004
+    image: mongodb/mongodb-community-server:7.0.16-ubuntu2204
     container_name: mongo-server
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongo
       MONGO_INITDB_ROOT_PASSWORD: mongo
-      MONGO_INITDB_DATABASE: devops
+      MONGO_INITDB_DATABASE: devopsDb
     ports:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
       - mongo_config:/data/configdb
+    networks:
+      - devopsNet
 
 volumes:
   mysql_data:
@@ -49,7 +55,9 @@ volumes:
   mongo_config:
     name: "mongo-config"
 
-
+networks:
+  devopsNet:
+    external: true
 
 # Construir todas las BD
 #> docker compose -f docker-compose-db.yml -p databases up -d

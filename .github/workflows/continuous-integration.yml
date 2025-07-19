@@ -34,7 +34,7 @@ jobs:
           languages: java
           queries: security-extended
 
-      - name: ✅ Run Unit & Integration Test
+      - name: ✅ Run Unit & Integration Test & Functional Test
         run: mvn -B verify
 
       - name: 🔍 CodeQL Analysis
