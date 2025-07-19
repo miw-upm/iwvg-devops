@@ -21,8 +21,8 @@
 ### :gear: Instalación del proyecto
 1. Clonar el repositorio en tu equipo, **mediante consola**:
 ```sh
-> cd <folder path>
-> git clone https://github.com/miw-upm/iwvg-devops
+cd <folder path>
+git clone https://github.com/miw-upm/iwvg-devops
 ```
 2. Importar el proyecto mediante **IntelliJ IDEA**  
    * **Open**, y seleccionar la carpeta del proyecto.
@@ -33,18 +33,21 @@
 ### :gear: Ejecución en local con Docker
 * Crear la red, solo una vez:
 ```sh
-> docker network create devopsNet
+docker network create devopsNet
+```
+* Ver redes:
+```sh
+docker network ls
+```
+* Comando Docker para crear imagen y arrancar contenedor con la imagen ( :warning: **incluir el punto final** ):
+```sh
+docker build -t devops:latest .
+docker run -d --name devops1  -p 8080:8080 devops
 ```
 
-* Comandos docker: ejecutar los comandos de Docker ( :warning: **incluir el punto final** ):
+* Comando para crear imagen y arrancarla en contenedor mediante docker compose (Se utiliza el fichero **docker-compose.yml**)
 ```sh
-> docker build -t devops .
-> docker run -d --name de[.gitignore](../spring-api-rest/.gitignore)vops-app  -p 8080:8080 devops
-```
-
-* Comandos docker compose:
-```sh
-> docker compose up --build -d
+docker compose up --build -d
 ```
 
 * Cliente Web: `http://localhost:8080`

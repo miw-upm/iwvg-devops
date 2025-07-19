@@ -1,0 +1,15 @@
+services:
+  devops:
+    build: .
+    image: devops:latest
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - devopsNet
+
+networks:
+  devopsNet:
+    external: true
+
+#> docker compose up --build -d

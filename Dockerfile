@@ -28,10 +28,10 @@ CMD ["java", "-jar", "app.jar"]
 
 # ------------------------------------- COMANDOS ----------------------------------------------------------
 # Construir la imagen, ATENCION!!! existe un punto al final que se debe incluir
-#> docker build -t devops .
+#> docker build -t devops:latest .
 
 # Crea y arrancar el contenedor a partir de la imagen
-#> docker run -d --name devops-app  -p 8080:8080 devops
+#> docker run -d --name devops1  -p 8080:8080 devops
 
 # Arranca el contenedor
-#> docker start devops-app
+#> docker start devops1
