@@ -37,6 +37,15 @@ jobs:
       - name: ✅ Run Unit & Integration Test & Functional Test
         run: mvn -B verify
 
+      - name: 🔔 Notify Slack on failure
+        if: failure()
+        uses: 8398a7/action-slack@v3
+        with:
+          status: ${{ job.status }}
+          fields: repo,author,commit,author,workflow,
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
       - name: 🔍 CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
