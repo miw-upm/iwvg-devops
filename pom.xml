@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.3</version>
+        <version>3.5.5</version>
         <relativePath/>
     </parent>
 
@@ -56,7 +56,7 @@
         <!-- Official Plugin Sonar -->
         <sonar-maven-plugin-version>5.1.0.4751</sonar-maven-plugin-version>
         <!-- OpenAPI -->
-        <springdoc-openapi-starter-webmvc-ui.version>2.8.9</springdoc-openapi-starter-webmvc-ui.version>
+        <springdoc-openapi-starter-webmvc-ui.version>2.8.11</springdoc-openapi-starter-webmvc-ui.version>
     </properties>
 
     <dependencies>
