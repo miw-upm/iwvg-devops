@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping(SystemResource.SYSTEM)
 public class SystemResource {
-
+    public static final String SYSTEM = "/";
     public static final String VERSION_BADGE = "/version-badge";
     private static final String BADGE_IMAGE_TEMPLATE = """
             <svg xmlns="http://www.w3.org/2000/svg" width="%d" height="20">
