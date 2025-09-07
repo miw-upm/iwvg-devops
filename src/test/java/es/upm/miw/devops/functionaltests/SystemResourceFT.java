@@ -2,50 +2,43 @@ package es.upm.miw.devops.functionaltests;
 
 import es.upm.miw.devops.rest.SystemResource;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.boot.test.web.server.LocalServerPort;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.reactive.server.WebTestClient;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.springframework.http.HttpStatus.OK;
 
-@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@AutoConfigureWebTestClient
 @ActiveProfiles("test")
 class SystemResourceFT {
 
-    @LocalServerPort
-    private int port;
-
     @Autowired
-    private TestRestTemplate restTemplate;
+    private WebTestClient webTestClient;
 
     @Test
     void testReadBadge() {
-        String url = "http://localhost:" + port + SystemResource.VERSION_BADGE;
-        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-
-        assertThat(response.getStatusCode()).isEqualTo(OK);
-        String body = response.getBody();
-        assertThat(body)
-                .isNotNull()
-                .startsWith("<svg");
+        webTestClient.get()
+                .uri(SystemResource.VERSION_BADGE)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(String.class)
+                .value(body -> assertThat(body)
+                        .isNotNull()
+                        .startsWith("<svg"));
     }
 
     @Test
     void testReadInfo() {
-        String url = "http://localhost:" + port + "/";
-        ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
-
-        assertThat(response.getStatusCode()).isEqualTo(OK);
-        String body = response.getBody();
-        assertThat(body)
-                .isNotNull()
-                .isNotEmpty();
+        webTestClient.get()
+                .uri("/")
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody(String.class)
+                .value(body -> assertThat(body)
+                        .isNotNull()
+                        .isNotEmpty());
     }
 }
