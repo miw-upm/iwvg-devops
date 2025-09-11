@@ -94,8 +94,7 @@ Se crearán las siguientes 4 historias (**Issues**).
 
 > Realizar la segunda liberación del código (_**v.5.1.0-release**_)
 
-#### 6. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**
-Issues**) por cada búsqueda, con el test correspondiente (**3.5 ptos**).
+#### 6. Sprint 3. Preparación de cuatro búsquedas a partir de las siguientes, según el valor de las primeros cuatro valores distintos del último commit realizado de la liberación anterior, se creará una historia (**Issues**) por cada búsqueda, con el test correspondiente (**3.5 ptos**).
 
 * `0` Stream&lt;String> findUserFamilyNameInitialBySomeProperFraction();
 * `1` Stream&lt;String> findUserIdBySomeProperFraction();
