@@ -4,7 +4,7 @@ on:
     branches: ['master']
 
 env:
-  REPOSITORY: ${{ lower(github.repository) }} # miw-upm/iwvg-devops
+  REPOSITORY: ${{ github.repository }} # miw-upm/iwvg-devops
   GHCR_URL: ghcr.io # GitHub Container Registry
 
 jobs:
@@ -28,6 +28,8 @@ jobs:
         run: |
           echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
           echo "ARTIFACT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)" >> $GITHUB_ENV
+      - name: 🏷️ Set repository lowercase
+        run: echo "REPOSITORY=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
 
       # 1º Crear Token de Acceso Personal:
       #    GitHub → Settings → Developer settings → Personal access tokens → Generate new token (classic)
