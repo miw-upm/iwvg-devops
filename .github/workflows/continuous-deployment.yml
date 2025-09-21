@@ -4,7 +4,7 @@ on:
     branches: ['master']
 
 env:
-  REPOSITORY: ${{ github.repository }} # <user>/<repo>
+  REPOSITORY: ${{ toLower(github.repository) }} # miw-upm/iwvg-devops
   GHCR_URL: ghcr.io # GitHub Container Registry
 
 jobs:
