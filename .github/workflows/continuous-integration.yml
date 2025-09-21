@@ -48,18 +48,17 @@ jobs:
         with:
           category: "/language:java"
 
-
+      # Organización de la cuenta de Sonar: miw-upm-github
       - name: 🏷️ Extract artifact from pom & Sonar Organization
-        run:  |
+        run: |
           echo "ARTIFACT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)" >> $GITHUB_ENV
-        # Organización de la cuenta de Sonar: miw-upm-github
           echo "ORGANIZATION=miw-upm-github" >> $GITHUB_ENV
 
       - name: 📊 Sonar Analysis
         run: >
-          mvn -B sonar:sonar 
-          -Dsonar.projectKey=${{ORGANIZATION}}_${{ env.ARTIFACT }}
-          -Dsonar.organization=${{ORGANIZATION}}
+          mvn -B sonar:sonar
+          -Dsonar.projectKey=${{ env.ORGANIZATION }}_${{ env.ARTIFACT }}
+          -Dsonar.organization=${{ env.ORGANIZATION }}
           -Dsonar.host.url=https://sonarcloud.io 
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
         env:
