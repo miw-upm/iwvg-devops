@@ -1,11 +1,7 @@
 name: CD
 on:
   push:
-    branches: ['master']
-
-env:
-  REPOSITORY: ${{ github.repository }} # miw-upm/iwvg-devops
-  GHCR_URL: ghcr.io # GitHub Container Registry
+    branches: [master]
 
 jobs:
   cd:
@@ -24,16 +20,15 @@ jobs:
           java-version: 21
           cache: maven
 
-      - name: 🏷️ Extract repository, artifact & version from pom
+      - name: 🏷️ Extract GitHub Container Registry, repository (lowercase) & version from pom
         run: |
-          echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
-          echo "ARTIFACT=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)" >> $GITHUB_ENV
+          echo "GHCR_URL=ghcr.io" >> $GITHUB_ENV
           echo "REPOSITORY=${GITHUB_REPOSITORY,,}" >> $GITHUB_ENV
+          echo "VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)" >> $GITHUB_ENV
 
       # 1º Crear Token de Acceso Personal:
       #    GitHub → Settings → Developer settings → Personal access tokens → Generate new token (classic)
       #    Permisos mínimos: write:packages, read:packages, delete:packages, repo
-      #
       # 2º Crear secret en GitHub:
       #    Repo → Settings → Secrets and variables → Actions → New repository secret
       #    Name: GHCR_PERSONAL_ACCESS_TOKEN, Value: <tu token>
